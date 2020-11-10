@@ -8,6 +8,11 @@
         forceCoversAnnotation="true"
 >
     <testsuites>
+        <testsuite name="date">
+            <file>./tests/DateTime/Creating.php</file>
+            <file>./tests/DateTime/Modifying.php</file>
+            <file>./tests/DateTime/Reading.php</file>
+        </testsuite>
         <testsuite name="interval">
             <file>./tests/DateInterval/Copying.php</file>
             <file>./tests/DateInterval/Creating.php</file>
