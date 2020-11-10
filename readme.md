@@ -15,3 +15,31 @@
 This library is compatible with PHP version `5.6`, `7.0`, `7.1`, `7.2`, `7.3` and `7.4`.
 
 This library has no dependencies.
+
+## DateTimeZone
+
+```php
+use Kusabi\Date\DateTimeZone;
+
+// Create a basic instance
+$timezone = new DateTimeZone();
+$timezone = new DateTimeZone('Asia/Yakutsk');
+
+// Create an instance with a chain-able static method
+$timezone = DateTimeZone::instance();
+$timezone = DateTimeZone::instance('Asia/Yakutsk');
+
+// Create an instance from another instance
+$legacy = new \DateTimeZone('UTC');
+$timezone = DateTimeZone::createFromInstance($legacy);
+
+// Quickly create timezones for a particular area
+$timezone = DateTimeZone::PerthAustralia();
+$timezone = DateTimeZone::PhoenixAmerica();
+$timezone = DateTimeZone::TokyoAsia();
+
+// Quick access to timezone data
+$lat = $timezone->getLatitude();
+$lon = $timezone->getLongitude();
+$code = $timezone->getCountryCode();
+```

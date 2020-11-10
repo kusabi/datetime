@@ -7,6 +7,14 @@
         convertWarningsToExceptions="true"
         forceCoversAnnotation="true"
 >
+    <testsuites>
+        <testsuite name="timezone">
+            <file>./tests/DateTimeZone/Comparisons.php</file>
+            <file>./tests/DateTimeZone/Copying.php</file>
+            <file>./tests/DateTimeZone/Creating.php</file>
+            <file>./tests/DateTimeZone/Reading.php</file>
+        </testsuite>
+    </testsuites>
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">./src</directory>
