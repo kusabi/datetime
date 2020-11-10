@@ -8,6 +8,15 @@
         forceCoversAnnotation="true"
 >
     <testsuites>
+        <testsuite name="interval">
+            <file>./tests/DateInterval/Copying.php</file>
+            <file>./tests/DateInterval/Creating.php</file>
+            <file>./tests/DateInterval/Inverting.php</file>
+            <file>./tests/DateInterval/Modifying.php</file>
+            <file>./tests/DateInterval/Optimising.php</file>
+            <file>./tests/DateInterval/Reading.php</file>
+            <file>./tests/DateInterval/Spec.php</file>
+        </testsuite>
         <testsuite name="timezone">
             <file>./tests/DateTimeZone/Comparisons.php</file>
             <file>./tests/DateTimeZone/Copying.php</file>
