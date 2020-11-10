@@ -22,6 +22,11 @@
             <file>./tests/DateInterval/Reading.php</file>
             <file>./tests/DateInterval/Spec.php</file>
         </testsuite>
+        <testsuite name="period">
+            <file>./tests/DatePeriod/Copying.php</file>
+            <file>./tests/DatePeriod/Creating.php</file>
+            <file>./tests/DatePeriod/Modifying.php</file>
+        </testsuite>
         <testsuite name="timezone">
             <file>./tests/DateTimeZone/Comparisons.php</file>
             <file>./tests/DateTimeZone/Copying.php</file>
