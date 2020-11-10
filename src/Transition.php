@@ -2,8 +2,6 @@
 
 namespace Kusabi\Date;
 
-use DateTime;
-
 class Transition
 {
     /**
@@ -79,9 +77,7 @@ class Transition
      */
     public function getDate()
     {
-        $date = new DateTime();
-        $date->setTimestamp($this->timestamp);
-        return $date;
+        return DateTime::createFromTimestamp($this->timestamp);
     }
 
     /**

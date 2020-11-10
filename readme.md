@@ -16,6 +16,96 @@ This library is compatible with PHP version `5.6`, `7.0`, `7.1`, `7.2`, `7.3` an
 
 This library has no dependencies.
 
+## DateTime
+
+```php
+use Kusabi\Date\DateTime;
+use Kusabi\Date\DateTimeZone;
+
+// Create a basic instance
+$date = new DateTime();
+$date = new DateTime('monday');
+$date = new DateTime('tomorrow');
+
+// Create an instance with a chain-able static method
+$date = DateTime::instance();
+$date = DateTime::instance('monday');
+$date = DateTime::instance('tomorrow');
+
+// Create an instance from another instance
+$legacy = new \DateTime('tomorrow');
+$date = DateTime::createFromInstance($legacy);
+
+// Short hand creators
+$date = DateTime::now();       // 2020-01-02 12:30:00
+$date = DateTime::today();     // 2020-01-02 00:00:00
+$date = DateTime::yesterday(); // 2020-01-01 00:00:00
+$date = DateTime::tomorrow();  // 2020-01-03 00:00:00
+
+// Set time zone
+$date = new DateTime();
+$date->setTimezone(DateTimeZone::LondonEurope());
+$date->setTimezone(DateTimeZone::AbidjanAfrica(), true); // Lock the date time string, bu translating the timestamp by the offset
+
+// Update from format
+$date = new DateTime();
+$date->setFromFormat('Y-m-d H:i:s', '2030-12-25 07:30:00');
+
+// Moving to limits
+$date = new DateTime();
+$date->endOfDay(); // 2020-01-02 23:59:59
+$date->endOfMonth(); // 2020-01-31 00:00:00
+$date->startOfDay(); // 2020-01-02 00:00:00
+
+// Setting units
+$date->setDay(25);
+$date->setMonth(12);
+$date->setYear(12);
+$date->setTime(7, 30, 0);
+$date->setDay(25)->setMonth(12)->setYear(2020)->setTime(7, 30, 0);
+$date->setDate(2020, 12, 25)->setTime(7, 30, 0);
+
+// Reading units
+$date->getDayOfMonth();      // 25
+$date->getDayOfWeek();       // 1
+$date->getDayName();         // Monday
+$date->getDayShortName();    // Mon
+$date->getDaysInMonth();     // 31
+$date->getDaysLeftInMonth(); // 6
+$date->getMonth();           // 1
+$date->getMonthName();       // January
+$date->getMonthShortName();  // Jan
+
+// Adding units
+$date->addSecond();
+$date->addSeconds(10);
+$date->addMinute();
+$date->addMinutes(10);
+$date->addHour();
+$date->addHours(10);
+$date->addDay();
+$date->addDays(10);
+$date->addMonth();
+$date->addMonths(10);
+$date->addYear();
+$date->addYears(10);
+
+// Subtracting units
+$date->subSecond();
+$date->subSeconds(10);
+$date->subMinute();
+$date->subMinutes(10);
+$date->subHour();
+$date->subHours(10);
+$date->subDay();
+$date->subDays(10);
+$date->subMonth();
+$date->subMonths(10);
+$date->subYear();
+$date->subYears(10);
+
+```
+
 ## DateInterval
 
 ```php
