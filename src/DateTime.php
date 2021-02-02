@@ -15,7 +15,7 @@ class DateTime extends \DateTime
      *
      * @return static|false
      */
-    public static function createFromFormat($format, $time, NativeDateTimeZone $timezone = null)
+    public static function createFromFormat($format, $time, $timezone = null)
     {
         $legacy = parent::createFromFormat(...func_get_args());
         return $legacy ? static::createFromInstance($legacy) : false;
