@@ -26,6 +26,22 @@ class Creating extends TestCase
     }
 
     /**
+     * Test we can create from an existing period instance
+     *
+     * @covers \Kusabi\Date\DatePeriod::createFromInstance
+     */
+    public function testCreateFromLegacyInstance()
+    {
+        $period = new \DatePeriod(DateTime::today(), DateInterval::day(), DateTime::today()->addDays(7));
+        $instance = DatePeriod::createFromInstance($period);
+
+        $this->assertSame($period->start->format('Y-m-d'), $instance->start->format('Y-m-d'));
+        $this->assertSame($period->end->format('Y-m-d'), $instance->end->format('Y-m-d'));
+        $this->assertSame(count(iterator_to_array($period)), count(iterator_to_array($instance)));
+        $this->assertNotSame($period, $instance);
+    }
+
+    /**
      * Test the instance chain-able constructor with parameters from this library
      *
      * @return void

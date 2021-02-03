@@ -1241,18 +1241,6 @@ class DateTimeZone extends NativeDateTimeZone
     }
 
     /**
-     * Create an instance for Australia/Currie
-     *
-     * @return self
-     *
-     * @noinspection PhpUnused
-     */
-    public static function CurrieAustralia()
-    {
-        return static::instance('Australia/Currie');
-    }
-
-    /**
      * Create an instance for Africa/Dakar
      *
      * @return self

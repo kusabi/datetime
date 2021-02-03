@@ -2,6 +2,7 @@
 
 namespace Kusabi\Date\Tests\DateTime;
 
+use Carbon\Carbon;
 use DateInterval as NativeDateInterval;
 use DateTime as NativeDateTime;
 use Exception;
@@ -11,6 +12,20 @@ use PHPUnit\Framework\TestCase;
 
 class Creating extends TestCase
 {
+    /**
+     * Testing create from another carbon instance
+     *
+     * @return void
+     *
+     * @covers \Kusabi\Date\DateTime::createFromInstance
+     */
+    public function testCreateFromCarbonInstance()
+    {
+        $carbon = Carbon::createFromFormat('Y-m-d', '2020-01-01');
+        $date = DateTime::createFromInstance($carbon);
+        $this->assertSame($carbon->getTimestamp(), $date->getTimestamp());
+    }
+
     /**
      * Testing create from format returns an instance of DateTime instead of DateTime
      *

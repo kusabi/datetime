@@ -10,6 +10,7 @@
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.16",
+        "nesbot/carbon": "^1.39",
         "phpunit/phpunit": "^5.7",
         "symfony/var-dumper": "^3.4"
     },

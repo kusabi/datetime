@@ -32,7 +32,7 @@ class Creating extends TestCase
      *
      * @param string $name
      *
-     * @covers \Kusabi\Date\DateTimeZone::__construct
+     * @covers       \Kusabi\Date\DateTimeZone::__construct
      */
     public function testConstructor($name)
     {

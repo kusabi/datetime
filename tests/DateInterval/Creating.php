@@ -2,6 +2,7 @@
 
 namespace Kusabi\Date\Tests\DateInterval;
 
+use Carbon\CarbonInterval;
 use DateInterval as NativeDateInterval;
 use Exception;
 use Kusabi\Date\DateInterval;
@@ -33,7 +34,7 @@ class Creating extends TestCase
      *
      * @return void
      *
-     * @covers \Kusabi\Date\DateInterval::__construct
+     * @covers       \Kusabi\Date\DateInterval::__construct
      *
      * @noinspection PhpDocMissingThrowsInspection
      * @noinspection PhpUnhandledExceptionInspection
@@ -57,6 +58,22 @@ class Creating extends TestCase
     {
         $interval = new DateInterval();
         $this->assertSame(DateInterval::SPEC_EMPTY, $interval->getSpec());
+    }
+
+    /**
+     * Test that we can create an instance using another carbon instance
+     *
+     * @throws Exception
+     *
+     * @return void
+     *
+     * @covers \Kusabi\Date\DateInterval::createFromInstance
+     */
+    public function testCreateFromCarbonInstance()
+    {
+        $carbon = new CarbonInterval('P1Y2M3DT4H5M6S');
+        $interval = DateInterval::createFromInstance($carbon);
+        $this->assertEqualInterval($carbon, $interval);
     }
 
     /**
@@ -128,7 +145,7 @@ class Creating extends TestCase
      *
      * @return void
      *
-     * @covers \Kusabi\Date\DateInterval::instance
+     * @covers       \Kusabi\Date\DateInterval::instance
      */
     public function testInstance($spec)
     {

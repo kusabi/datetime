@@ -3,7 +3,6 @@
 namespace Kusabi\Date;
 
 use DateTimeInterface;
-use DateTimeZone as NativeDateTimeZone;
 use Exception;
 
 class DateTime extends \DateTime
@@ -431,7 +430,7 @@ class DateTime extends \DateTime
     /**
      * Set the timezone associated with the Date
      *
-     * @param DateTimeZone $timezone
+     * @param \DateTimeZone $timezone
      * @param bool $freezeDatetime
      *
      * @return static
