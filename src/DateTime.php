@@ -112,6 +112,16 @@ class DateTime extends \DateTime
     }
 
     /**
+     * Cast as a string
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->toString();
+    }
+
+    /**
      * Add a day to the date
      *
      * @return DateTime
@@ -608,5 +618,15 @@ class DateTime extends \DateTime
     public function subYears($years)
     {
         return $this->sub(DateInterval::years($years));
+    }
+
+    /**
+     * Convert to a string
+     *
+     * @return string
+     */
+    public function toString()
+    {
+        return $this->format(\DateTime::ATOM);
     }
 }

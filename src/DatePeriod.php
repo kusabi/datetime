@@ -38,6 +38,16 @@ class DatePeriod extends NativeDatePeriod
     }
 
     /**
+     * Cast as a string
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->toString();
+    }
+
+    /**
      * Return a cloned instance of this period
      *
      * @return self
@@ -45,5 +55,47 @@ class DatePeriod extends NativeDatePeriod
     public function cloned()
     {
         return static::createFromInstance($this);
+    }
+
+    /**
+     * Get the interval
+     *
+     * @return DateInterval
+     *
+     * @link https://php.net/manual/en/dateperiod.getdateinterval.php
+     */
+    public function getDateInterval()
+    {
+        return DateInterval::createFromInstance(parent::getDateInterval());
+    }
+
+    /**
+     * Get the end date as our datetime instance
+     *
+     * @return DateTime
+     */
+    public function getEndDatetime()
+    {
+        return DateTime::createFromInstance($this->getEndDate());
+    }
+
+    /**
+     * Get the start date as our datetime instance
+     *
+     * @return DateTime
+     */
+    public function getStartDatetime()
+    {
+        return DateTime::createFromInstance($this->getStartDate());
+    }
+
+    /**
+     * Convert to a string
+     *
+     * @return string
+     */
+    public function toString()
+    {
+        return "every {$this->getDateInterval()->optimised()}, from {$this->getStartDatetime()} (included) to {$this->getEndDatetime()}";
     }
 }

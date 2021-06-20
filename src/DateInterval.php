@@ -62,7 +62,7 @@ class DateInterval extends NativeDateInterval
      */
     public function __construct($spec = self::SPEC_EMPTY)
     {
-        parent::__construct($spec);
+        parent::__construct($spec === '' ? self::SPEC_EMPTY : $spec);
     }
 
     /**
@@ -284,6 +284,16 @@ class DateInterval extends NativeDateInterval
     public static function years($years)
     {
         return static::createFromValues($years);
+    }
+
+    /**
+     * Cast as a string
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->toString();
     }
 
     /**
@@ -845,5 +855,41 @@ class DateInterval extends NativeDateInterval
     public function subYears($years)
     {
         return $this->addYears(-$years);
+    }
+
+    /**
+     * Convert to a string
+     *
+     * @return string
+     */
+    public function toString()
+    {
+        $parts = [];
+        if ($this->y != 0) {
+            $parts[] = $this->y.' '.($this->y > 1 ? 'years' : 'year');
+        }
+        if ($this->m != 0) {
+            $parts[] = $this->m.' '.($this->m > 1 ? 'months' : 'month');
+        }
+        if ($this->d != 0) {
+            $parts[] = $this->d.' '.($this->d > 1 ? 'days' : 'day');
+        }
+        if ($this->h != 0) {
+            $parts[] = $this->h.' '.($this->h > 1 ? 'hours' : 'hour');
+        }
+        if ($this->i != 0) {
+            $parts[] = $this->i.' '.($this->i > 1 ? 'minutes' : 'minute');
+        }
+        if ($this->s != 0) {
+            $parts[] = $this->s.' '.($this->s > 1 ? 'seconds' : 'second');
+        }
+
+        $last = array_pop($parts);
+        $left = implode(', ', array_filter($parts));
+        $final = implode(' and ', array_filter([$left, $last]));
+        $final = $final ?: '0 seconds';
+        $sign = $this->invert ? '-' : '+';
+
+        return $sign.$final;
     }
 }

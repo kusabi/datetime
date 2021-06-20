@@ -12,6 +12,7 @@
             <file>./tests/DateTime/Creating.php</file>
             <file>./tests/DateTime/Modifying.php</file>
             <file>./tests/DateTime/Reading.php</file>
+            <file>./tests/DateTime/Converting.php</file>
         </testsuite>
         <testsuite name="interval">
             <file>./tests/DateInterval/Copying.php</file>
@@ -21,11 +22,13 @@
             <file>./tests/DateInterval/Optimising.php</file>
             <file>./tests/DateInterval/Reading.php</file>
             <file>./tests/DateInterval/Spec.php</file>
+            <file>./tests/DateInterval/Converting.php</file>
         </testsuite>
         <testsuite name="period">
             <file>./tests/DatePeriod/Copying.php</file>
             <file>./tests/DatePeriod/Creating.php</file>
-            <file>./tests/DatePeriod/Modifying.php</file>
+            <file>./tests/DatePeriod/Converting.php</file>
+            <file>./tests/DatePeriod/Reading.php</file>
         </testsuite>
         <testsuite name="timezone">
             <file>./tests/DateTimeZone/Comparisons.php</file>
