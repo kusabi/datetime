@@ -398,6 +398,26 @@ class DateTime extends \DateTime
     }
 
     /**
+     * Is this datetime a weekday?
+     *
+     * @return bool
+     */
+    public function isWeekday()
+    {
+        return $this->isWeekend() === false;
+    }
+
+    /**
+     * Is this datetime the weekend?
+     *
+     * @return bool
+     */
+    public function isWeekend()
+    {
+        return $this->getDayName() === 'Saturday' || $this->getDayName() === 'Sunday';
+    }
+
+    /**
      * Set the day
      *
      * @param int $day
