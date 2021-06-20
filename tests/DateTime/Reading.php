@@ -245,4 +245,42 @@ class Reading extends TestCase
         $this->assertSame(2000, DateTime::createFromFormat('Y-m-d', '2000-01-01')->getYear());
         $this->assertSame(3000, DateTime::createFromFormat('Y-m-d', '3000-01-01')->getYear());
     }
+
+    /**
+     * Test checking if a datetime is a weekday
+     *
+     * @return void
+     *
+     * @covers \Kusabi\Date\DateTime::isWeekday
+     */
+    public function testIsWeekday()
+    {
+        $this->assertTrue(DateTime::createFromFormat('Y-m-d', '2021-01-01')->isWeekday());
+        $this->assertFalse(DateTime::createFromFormat('Y-m-d', '2021-01-02')->isWeekday());
+        $this->assertFalse(DateTime::createFromFormat('Y-m-d', '2021-01-03')->isWeekday());
+        $this->assertTrue(DateTime::createFromFormat('Y-m-d', '2021-01-04')->isWeekday());
+        $this->assertTrue(DateTime::createFromFormat('Y-m-d', '2021-01-05')->isWeekday());
+        $this->assertTrue(DateTime::createFromFormat('Y-m-d', '2021-01-06')->isWeekday());
+        $this->assertTrue(DateTime::createFromFormat('Y-m-d', '2021-01-07')->isWeekday());
+        $this->assertTrue(DateTime::createFromFormat('Y-m-d', '2021-01-08')->isWeekday());
+    }
+
+    /**
+     * Test checking if a datetime is the weekend
+     *
+     * @return void
+     *
+     * @covers \Kusabi\Date\DateTime::isWeekend
+     */
+    public function testIsWeekend()
+    {
+        $this->assertFalse(DateTime::createFromFormat('Y-m-d', '2021-01-01')->isWeekend());
+        $this->assertTrue(DateTime::createFromFormat('Y-m-d', '2021-01-02')->isWeekend());
+        $this->assertTrue(DateTime::createFromFormat('Y-m-d', '2021-01-03')->isWeekend());
+        $this->assertFalse(DateTime::createFromFormat('Y-m-d', '2021-01-04')->isWeekend());
+        $this->assertFalse(DateTime::createFromFormat('Y-m-d', '2021-01-05')->isWeekend());
+        $this->assertFalse(DateTime::createFromFormat('Y-m-d', '2021-01-06')->isWeekend());
+        $this->assertFalse(DateTime::createFromFormat('Y-m-d', '2021-01-07')->isWeekend());
+        $this->assertFalse(DateTime::createFromFormat('Y-m-d', '2021-01-08')->isWeekend());
+    }
 }
