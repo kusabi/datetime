@@ -4809,7 +4809,7 @@ class DateTimeZone extends NativeDateTimeZone
      */
     public static function UTC()
     {
-        return static::instance('UTC');
+        return static::instance();
     }
 
     /**

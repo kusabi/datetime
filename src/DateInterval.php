@@ -91,7 +91,7 @@ class DateInterval extends NativeDateInterval
      * @param int|null $minutes
      * @param int|null $seconds
      *
-     * @return DateInterval|false
+     * @return DateInterval
      *
      * @noinspection PhpDocMissingThrowsInspection
      * @noinspection PhpUnhandledExceptionInspection
@@ -315,7 +315,7 @@ class DateInterval extends NativeDateInterval
      */
     public function addDays($days)
     {
-        $this->d += (int) ($this->isInverted() ? -$days : $days);
+        $this->d += $this->isInverted() ? -$days : $days;
         return $this->optimise();
     }
 
@@ -338,7 +338,7 @@ class DateInterval extends NativeDateInterval
      */
     public function addHours($hours)
     {
-        $this->h += (int) ($this->isInverted() ? -$hours : $hours);
+        $this->h += $this->isInverted() ? -$hours : $hours;
         return $this->optimise();
     }
 
@@ -379,7 +379,7 @@ class DateInterval extends NativeDateInterval
      */
     public function addMinutes($minutes)
     {
-        $this->i += (int) ($this->isInverted() ? -$minutes : $minutes);
+        $this->i += $this->isInverted() ? -$minutes : $minutes;
         return $this->optimise();
     }
 
@@ -402,7 +402,7 @@ class DateInterval extends NativeDateInterval
      */
     public function addMonths($months)
     {
-        $this->m += (int) ($this->isInverted() ? -$months : $months);
+        $this->m += $this->isInverted() ? -$months : $months;
         return $this->optimise();
     }
 
@@ -425,7 +425,7 @@ class DateInterval extends NativeDateInterval
      */
     public function addSeconds($seconds)
     {
-        $this->s += (int) ($this->isInverted() ? -$seconds : $seconds);
+        $this->s += $this->isInverted() ? -$seconds : $seconds;
         return $this->optimise();
     }
 
@@ -448,7 +448,7 @@ class DateInterval extends NativeDateInterval
      */
     public function addYears($years)
     {
-        $this->y += (int) ($this->isInverted() ? -$years : $years);
+        $this->y += $this->isInverted() ? -$years : $years;
         return $this->optimise();
     }
 
