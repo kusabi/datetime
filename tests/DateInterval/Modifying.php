@@ -330,6 +330,19 @@ class Modifying extends TestCase
         $this->assertFalse($interval->isInverted());
     }
 
+    /**
+     * Test sub methods are chainable
+     *
+     * @return void
+     *
+     * @covers \Kusabi\Date\DateInterval::subYears
+     * @covers \Kusabi\Date\DateInterval::subMonths
+     * @covers \Kusabi\Date\DateInterval::subDays
+     * @covers \Kusabi\Date\DateInterval::subHours
+     * @covers \Kusabi\Date\DateInterval::subMinutes
+     * @covers \Kusabi\Date\DateInterval::subSeconds
+     * @covers \Kusabi\Date\DateInterval::subSeconds
+     */
     public function testSubMixedChain()
     {
         $interval = new DateInterval();

@@ -13,8 +13,10 @@ class DateTime extends \DateTime
      * Override the method to return an epoch date
      *
      * @return static|false
+     *
+     * @see \DateTime::createFromFormat()
      */
-    public static function createFromFormat($format, $time, $timezone = null)
+    public static function createFromFormat($format, $datetime, $timezone = null)
     {
         $legacy = parent::createFromFormat(...func_get_args());
         return $legacy ? static::createFromInstance($legacy) : false;
