@@ -94,8 +94,42 @@ class Creating extends TestCase
     {
         $a = DateTime::createFromTimestamp(1594283757);
         $b = DateTime::createFromTimestamp(1594283757, DateTimeZone::AddisAbabaAfrica());
-        $this->assertSame('2020-07-09 08:35:57', $a->format('Y-m-d H:i:s'));
-        $this->assertSame('2020-07-09 11:35:57', $b->format('Y-m-d H:i:s'));
+        $this->assertSame('2020-07-09 08:35:57 1594283757.000000', $a->format('Y-m-d H:i:s U.u'));
+        $this->assertSame('2020-07-09 11:35:57 1594283757.000000', $b->format('Y-m-d H:i:s U.u'));
+    }
+
+    /**
+     * Testing create from timestamp using the string value from `microtime(false)`
+     *
+     * @throws Exception
+     *
+     * @return void
+     *
+     * @covers \Kusabi\Date\DateTime::createFromTimestamp
+     */
+    public function testCreateFromTimestampMicroTimeFalse()
+    {
+        $a = DateTime::createFromTimestamp('0.46060200 1594283757');
+        $b = DateTime::createFromTimestamp('0.46060200 1594283757', DateTimeZone::AddisAbabaAfrica());
+        $this->assertSame('2020-07-09 08:35:57 1594283757.460602', $a->format('Y-m-d H:i:s U.u'));
+        $this->assertSame('2020-07-09 11:35:57 1594283757.460602', $b->format('Y-m-d H:i:s U.u'));
+    }
+
+    /**
+     * Testing create from timestamp using the float value from `microtime(true)`
+     *
+     * @throws Exception
+     *
+     * @return void
+     *
+     * @covers \Kusabi\Date\DateTime::createFromTimestamp
+     */
+    public function testCreateFromTimestampMicroTimeTrue()
+    {
+        $a = DateTime::createFromTimestamp(1594283757.4606);
+        $b = DateTime::createFromTimestamp(1594283757.4606, DateTimeZone::AddisAbabaAfrica());
+        $this->assertSame('2020-07-09 08:35:57 1594283757.460600', $a->format('Y-m-d H:i:s U.u'));
+        $this->assertSame('2020-07-09 11:35:57 1594283757.460600', $b->format('Y-m-d H:i:s U.u'));
     }
 
     /**
