@@ -42,6 +42,14 @@ $date = DateTime::today();     // 2020-01-02 00:00:00
 $date = DateTime::yesterday(); // 2020-01-01 00:00:00
 $date = DateTime::tomorrow();  // 2020-01-03 00:00:00
 
+// Create from timestamps or microtime
+$date = DateTime::createFromTimestamp(time());
+$date = DateTime::createFromTimestamp(microtime(true));
+$date = DateTime::createFromTimestamp(microtime());
+$date = DateTime::createFromTimestamp(time(), DateTimeZone::LondonEurope());
+$date = DateTime::createFromTimestamp(microtime(true), DateTimeZone::LondonEurope());
+$date = DateTime::createFromTimestamp(microtime(), DateTimeZone::LondonEurope());
+
 // Set time zone
 $date = new DateTime();
 $date->setTimezone(DateTimeZone::LondonEurope());

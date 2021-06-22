@@ -40,7 +40,7 @@ class DateTime extends \DateTime
     /**
      * Create a new instance from a unix timestamp
      *
-     * @param int $timestamp
+     * @param int|float|string $timestamp
      * @param DateTimeZone|null $timezone
      *
      * @return self
@@ -50,7 +50,19 @@ class DateTime extends \DateTime
      */
     public static function createFromTimestamp($timestamp, DateTimeZone $timezone = null)
     {
-        return static::instance('now', $timezone)->setTimestamp($timestamp);
+        $timezone = $timezone ?: DateTimeZone::UTC();
+
+        if (is_float($timestamp)) {
+            return static::createFromFormat('U.u', $timestamp)->setTimezone($timezone);
+        }
+
+        if (is_string($timestamp)) {
+            list($milli, $seconds) = explode(' ', $timestamp);
+            $float = number_format((double) $milli + (int) $seconds, 6, '.', '');
+            return static::createFromFormat('U.u', $float)->setTimezone($timezone);
+        }
+
+        return static::instance('now', $timezone)->setTimestamp((int) $timestamp);
     }
 
     /**
