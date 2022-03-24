@@ -1547,19 +1547,6 @@ class DateTimeZone extends NativeDateTimeZone
     }
 
     /**
-     * Create an instance for Pacific/Enderbury
-     *
-     * @return self
-     *
-     * @noinspection PhpUnused
-     * @noinspection SpellCheckingInspection
-     */
-    public static function EnderburyPacific()
-    {
-        return static::instance('Pacific/Enderbury');
-    }
-
-    /**
      * Create an instance for Australia/Eucla
      *
      * @return self
