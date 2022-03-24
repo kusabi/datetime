@@ -2231,6 +2231,18 @@ class DateTimeZone extends NativeDateTimeZone
     }
 
     /**
+     * Create an instance for Pacific/Kanton
+     *
+     * @return self
+     *
+     * @noinspection PhpUnused
+     */
+    public static function KantonPacific()
+    {
+        return static::instance('Pacific/Kanton');
+    }
+
+    /**
      * Create an instance for Asia/Karachi
      *
      * @return self
