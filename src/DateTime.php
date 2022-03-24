@@ -15,10 +15,12 @@ class DateTime extends \DateTime
      * @return static|false
      *
      * @see \DateTime::createFromFormat()
+     *
+     * @suppress PhanParamSignatureRealMismatchHasNoParamTypeInternal,PhanTypeMismatchArgumentInternal
      */
     public static function createFromFormat($format, $datetime, $timezone = null)
     {
-        $legacy = parent::createFromFormat(...func_get_args());
+        $legacy = parent::createFromFormat($format, $datetime, $timezone);
         return $legacy ? static::createFromInstance($legacy) : false;
     }
 
@@ -53,7 +55,7 @@ class DateTime extends \DateTime
         $timezone = $timezone ?: DateTimeZone::UTC();
 
         if (is_float($timestamp)) {
-            return static::createFromFormat('U.u', $timestamp)->setTimezone($timezone);
+            return static::createFromFormat('U.u', (string) $timestamp)->setTimezone($timezone);
         }
 
         if (is_string($timestamp)) {
@@ -71,7 +73,7 @@ class DateTime extends \DateTime
      * Useful for chaining commands
      *
      * @param string $time
-     * @param DateTimeZone $timezone
+     * @param DateTimeZone|null $timezone
      *
      * @throws Exception Emits Exception in case of an error.
      *

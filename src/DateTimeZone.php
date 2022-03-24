@@ -33,6 +33,20 @@ class DateTimeZone extends NativeDateTimeZone
     }
 
     /**
+     * Create an instance of this timezone class
+     *
+     * @param string $timezone
+     *
+     * @return self
+     *
+     * @noinspection PhpUnused
+     */
+    public static function instance($timezone = 'UTC')
+    {
+        return new static($timezone);
+    }
+
+    /**
      * Create an instance for Africa/Accra
      *
      * @return self
@@ -5228,20 +5242,6 @@ class DateTimeZone extends NativeDateTimeZone
             return $timezone->cloned();
         }
         return static::instance($timezone->getName());
-    }
-
-    /**
-     * Create an instance of this timezone class
-     *
-     * @param string $timezone
-     *
-     * @return self
-     *
-     * @noinspection PhpUnused
-     */
-    public static function instance($timezone = 'UTC')
-    {
-        return new static($timezone);
     }
 
     /**

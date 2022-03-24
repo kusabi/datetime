@@ -5,7 +5,8 @@ $finder = PhpCsFixer\Finder::create()->in([
     __DIR__ . '/tests'
 ]);
 
-return PhpCsFixer\Config::create()->setRules([
+$config = new PhpCsFixer\Config();
+$config->setRules([
     "@PSR2" => true,
     "binary_operator_spaces" => [
         "operators" => [
@@ -16,7 +17,7 @@ return PhpCsFixer\Config::create()->setRules([
     "ordered_imports" => true,
     "no_leading_import_slash" => true,
     "phpdoc_order" => true,
-    "visibility_required" => true,
+    "visibility_required" => false,
     "no_extra_blank_lines" => true,
     "class_attributes_separation" => true,
     "no_useless_return" => true,
@@ -38,7 +39,7 @@ return PhpCsFixer\Config::create()->setRules([
     "function_typehint_space" => true,
     "single_quote" => true,
     "cast_spaces" => true,
-    "blank_line_before_return" => false,
+    "blank_line_before_statement" => false,
     "blank_line_after_opening_tag" => true,
     "no_empty_statement" => true,
     "multiline_whitespace_before_semicolons" => true,
@@ -66,4 +67,7 @@ return PhpCsFixer\Config::create()->setRules([
     "array_syntax" => [
         "syntax" => "short"
     ]
-])->setFinder($finder);
+])
+->setFinder($finder);
+
+return $config;

@@ -11,7 +11,9 @@
     "require-dev": {
         "friendsofphp/php-cs-fixer": "*",
         "nesbot/carbon": "*",
+        "phan/phan": "*",
         "phpunit/phpunit": "*",
+        "phpbench/phpbench": "*",
         "symfony/var-dumper": "*"
     },
     "autoload": {
@@ -27,6 +29,9 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "kylekatarnls/update-helper": false
+        }
     }
 }

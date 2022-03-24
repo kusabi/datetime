@@ -44,7 +44,7 @@ class Transition
     {
         $this->timestamp = $timestamp;
         $this->offset = $offset;
-        $this->dls = $dls;
+        $this->dls = (int) $dls;
         $this->abbreviation = $abbreviation;
     }
 
@@ -103,10 +103,10 @@ class Transition
     /**
      * Is this transition in daylight savings time
      *
-     * @return int
+     * @return bool
      */
     public function isDaylightSavingsTime()
     {
-        return $this->dls;
+        return (bool) $this->dls;
     }
 }

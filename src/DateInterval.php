@@ -656,31 +656,31 @@ class DateInterval extends NativeDateInterval
         $this->y = 0;
 
         // Seconds up to minutes
-        $overflow = floor($seconds / self::SECONDS_IN_MINUTE);
+        $overflow = (int) floor($seconds / self::SECONDS_IN_MINUTE);
         $remaining = $seconds % self::SECONDS_IN_MINUTE;
         $this->i += $overflow;
         $this->s = $remaining;
 
         // Minutes up to hours
-        $overflow = floor($this->i / self::MINUTES_IN_HOUR);
+        $overflow = (int) floor($this->i / self::MINUTES_IN_HOUR);
         $remaining = $this->i % self::MINUTES_IN_HOUR;
         $this->h += $overflow;
         $this->i = $remaining;
 
         // Hours up to days
-        $overflow = floor($this->h / self::HOURS_IN_DAY);
+        $overflow = (int) floor($this->h / self::HOURS_IN_DAY);
         $remaining = $this->h % self::HOURS_IN_DAY;
         $this->d += $overflow;
         $this->h = $remaining;
 
         // Days up to months
-        $overflow = floor($this->d / self::DAYS_IN_MONTH);
+        $overflow = (int) floor($this->d / self::DAYS_IN_MONTH);
         $remaining = $this->d % self::DAYS_IN_MONTH;
         $this->m += $overflow;
         $this->d = $remaining;
 
         // Months up to year
-        $overflow = floor($this->m / self::MONTHS_IN_YEAR);
+        $overflow = (int) floor($this->m / self::MONTHS_IN_YEAR);
         $remaining = $this->m % self::MONTHS_IN_YEAR;
         $this->y += $overflow;
         $this->m = $remaining;
@@ -709,7 +709,7 @@ class DateInterval extends NativeDateInterval
      */
     public function setInverted($inverted = true)
     {
-        $this->invert = $inverted;
+        $this->invert = (int) $inverted;
         return $this;
     }
 

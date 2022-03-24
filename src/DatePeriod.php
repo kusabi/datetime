@@ -17,7 +17,7 @@ class DatePeriod extends NativeDatePeriod
      */
     public static function createFromInstance(NativeDatePeriod $period)
     {
-        return static::instance($period->getStartDate(), $period->getDateInterval(), $period->getEndDate());
+        return static::instance($period->getStartDate(), $period->getDateInterval(), $period->getEndDate() ?: $period->getStartDate());
     }
 
     /**
@@ -76,7 +76,7 @@ class DatePeriod extends NativeDatePeriod
      */
     public function getEndDatetime()
     {
-        return DateTime::createFromInstance($this->getEndDate());
+        return DateTime::createFromInstance($this->getEndDate() ?: $this->getStartDate());
     }
 
     /**

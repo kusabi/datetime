@@ -12,11 +12,78 @@
 
 ## Compatibility and dependencies
 
-This library is compatible with PHP version `5.6`, `7.0`, `7.1`, `7.2`, `7.3`, `7.4` and `8.0`.
+This library is compatible with PHP version `7.2`, `7.3`, `7.4` and `8.0`.
 
 This library has no dependencies.
 
-## DateTime
+## Installation
+
+Installation is simple using composer.
+
+```bash
+composer require kusabi/datetime
+```
+
+Or simply add it to your `composer.json` file
+
+```json
+{
+    "require": {
+        "kusabi/datetime": "^1.0"
+    }
+}
+```
+
+## Contributing
+
+This library follows [PSR-1](https://www.php-fig.org/psr/psr-1/) & [PSR-2](https://www.php-fig.org/psr/psr-2/) standards.
+
+
+#### Unit Tests
+
+Before pushing any changes, please ensure the unit tests are all passing.
+
+If possible, feel free to improve coverage in a separate commit.
+
+```bash
+vendor/bin/phpunit
+```
+
+#### Code sniffer
+
+Before pushing, please ensure you have run the code sniffer. **Only run it using the lowest support PHP version (5.6)**
+
+```bash
+vendor/bin/php-cs-fixer fix
+```
+
+#### Static Analyses
+
+Before pushing, please ensure you have run the static analyses tool.
+
+```bash
+vendor/bin/phan
+```
+
+#### Benchmarks
+
+Before pushing, please ensure you have checked the benchmarks and ensured that your code has not introduced any slowdowns.
+
+Feel free to speed up existing code, in a separate commit.
+
+Feel free to add more benchmarks for greater coverage, in a separate commit.
+
+```bash
+vendor/bin/phpbench run --report=quick
+vendor/bin/phpbench run --report=quick --output=markdown
+vendor/bin/phpbench run --report=quick --filter=benchNetFromTax --iterations=50 --revs=50000
+
+vendor/bin/phpbench xdebug:profile
+vendor/bin/phpbench xdebug:profile --gui
+```
+
+
+## Documentation
 
 ```php
 use Kusabi\Date\DateTime;
