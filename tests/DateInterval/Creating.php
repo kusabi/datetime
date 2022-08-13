@@ -6,6 +6,7 @@ use Carbon\CarbonInterval;
 use DateInterval as NativeDateInterval;
 use Exception;
 use Kusabi\Date\DateInterval;
+use Kusabi\Date\DateTime;
 use PHPUnit\Framework\TestCase;
 
 class Creating extends TestCase
@@ -283,6 +284,20 @@ class Creating extends TestCase
         $this->assertSame('P1Y', DateInterval::year()->getSpec());
         $this->assertSame('P1Y', DateInterval::years(1)->getSpec());
         $this->assertSame('P4Y', DateInterval::years(4)->getSpec());
+    }
+
+    /**
+     * Create an interval from two date times
+     *
+     * @throws Exception
+     *
+     * @return void
+     *
+     * @covers \Kusabi\Date\DateInterval::createFromDateTimes
+     */
+    public function testCreateFromDateTimes()
+    {
+        $this->assertSame('P1Y5D', DateInterval::createFromDateTimes(DateTime::today(), DateTime::today()->add(new DateInterval('P1Y5D')))->getSpec());
     }
 
     protected function assertEqualInterval(NativeDateInterval $a, NativeDateInterval $b)

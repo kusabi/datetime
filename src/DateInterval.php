@@ -3,6 +3,7 @@
 namespace Kusabi\Date;
 
 use DateInterval as NativeDateInterval;
+use DateTimeInterface;
 use Exception;
 
 class DateInterval extends NativeDateInterval
@@ -63,6 +64,21 @@ class DateInterval extends NativeDateInterval
     public function __construct($spec = self::SPEC_EMPTY)
     {
         parent::__construct($spec === '' ? self::SPEC_EMPTY : $spec);
+    }
+
+    /**
+     * Create a date interval that represents the interval between two datetime instances
+     *
+     * @param DateTimeInterface $from
+     * @param DateTimeInterface $to
+     *
+     * @throws Exception Emits Exception in case of an error.
+     *
+     * @return static
+     */
+    public static function createFromDateTimes(DateTimeInterface $from, DateTimeInterface $to): DateInterval
+    {
+        return DateTime::createFromInstance($from)->diff($to);
     }
 
     /**
