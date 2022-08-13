@@ -283,4 +283,28 @@ class Reading extends TestCase
         $this->assertFalse(DateTime::createFromFormat('Y-m-d', '2021-01-07')->isWeekend());
         $this->assertFalse(DateTime::createFromFormat('Y-m-d', '2021-01-08')->isWeekend());
     }
+
+    /**
+     * Test getting the date interval to another datetime
+     *
+     * @return void
+     *
+     * @covers \Kusabi\Date\DateTime::diff
+     */
+    public function testDiff()
+    {
+        $from = DateTime::createFromFormat('Y-m-d h:i:s', '2022-01-01 00:00:00');
+        $to = DateTime::createFromFormat('Y-m-d h:i:s', '2022-01-02 00:00:00');
+        $this->assertSame(1, $from->diff($to)->getDays());
+
+        $from = DateTime::createFromFormat('Y-m-d h:i:s', '2022-01-01 00:00:00');
+        $to = DateTime::createFromFormat('Y-m-d h:i:s', '2022-01-01 12:00:00');
+        $this->assertSame(0, $from->diff($to)->getDays());
+        $this->assertSame(0.5, $from->diff($to)->getRealDays());
+        $this->assertSame(12, $from->diff($to)->getHours());
+
+        $from = DateTime::createFromFormat('Y-m-d h:i:s', '2000-01-01 00:00:00');
+        $to = DateTime::createFromFormat('Y-m-d h:i:s', '2003-05-01 00:00:00');
+        $this->assertSame(1120, $from->diff($to)->getDays());
+    }
 }

@@ -270,6 +270,18 @@ class DateTime extends \DateTime
     }
 
     /**
+     * {@inheritDoc}
+     *
+     * @return DateInterval
+     *
+     * @see \DateTime::diff()
+     */
+    public function diff($targetObject, $absolute = false): DateInterval
+    {
+        return DateInterval::createFromInstance(parent::diff($targetObject, $absolute));
+    }
+
+    /**
      * Set the time to the end of the day
      *
      * @return static
