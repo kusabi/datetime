@@ -12,9 +12,9 @@ class Transition
     protected $abbreviation;
 
     /**
-     * The day light savings flag
+     * The daylight savings flag
      *
-     * @var int
+     * @var bool
      */
     protected $dls;
 
@@ -40,11 +40,11 @@ class Transition
      * @param bool $dls
      * @param string $abbreviation
      */
-    public function __construct($timestamp, $offset, $dls, $abbreviation)
+    public function __construct(int $timestamp, int $offset, bool $dls, string $abbreviation)
     {
         $this->timestamp = $timestamp;
         $this->offset = $offset;
-        $this->dls = (int) $dls;
+        $this->dls = $dls;
         $this->abbreviation = $abbreviation;
     }
 
@@ -55,7 +55,7 @@ class Transition
      *
      * @return static
      */
-    public static function createFromArray(array $array)
+    public static function createFromArray(array $array): self
     {
         return new static($array['ts'], $array['offset'], $array['isdst'], $array['abbr']);
     }
@@ -65,7 +65,7 @@ class Transition
      *
      * @return string
      */
-    public function getAbbreviation()
+    public function getAbbreviation(): string
     {
         return $this->abbreviation;
     }
@@ -75,7 +75,7 @@ class Transition
      *
      * @return DateTime
      */
-    public function getDate()
+    public function getDate(): DateTime
     {
         return DateTime::createFromTimestamp($this->timestamp);
     }
@@ -85,7 +85,7 @@ class Transition
      *
      * @return int
      */
-    public function getOffset()
+    public function getOffset(): int
     {
         return $this->offset;
     }
@@ -95,7 +95,7 @@ class Transition
      *
      * @return int
      */
-    public function getTimestamp()
+    public function getTimestamp(): int
     {
         return $this->timestamp;
     }
@@ -105,8 +105,8 @@ class Transition
      *
      * @return bool
      */
-    public function isDaylightSavingsTime()
+    public function isDaylightSavingsTime(): bool
     {
-        return (bool) $this->dls;
+        return $this->dls;
     }
 }

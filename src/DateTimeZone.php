@@ -27,23 +27,9 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function AbidjanAfrica()
+    public static function AbidjanAfrica(): self
     {
         return static::instance('Africa/Abidjan');
-    }
-
-    /**
-     * Create an instance of this timezone class
-     *
-     * @param string $timezone
-     *
-     * @return self
-     *
-     * @noinspection PhpUnused
-     */
-    public static function instance($timezone = 'UTC')
-    {
-        return new static($timezone);
     }
 
     /**
@@ -53,7 +39,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function AccraAfrica()
+    public static function AccraAfrica(): self
     {
         return static::instance('Africa/Accra');
     }
@@ -66,7 +52,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function AdakAmerica()
+    public static function AdakAmerica(): self
     {
         return static::instance('America/Adak');
     }
@@ -78,7 +64,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function AddisAbabaAfrica()
+    public static function AddisAbabaAfrica(): self
     {
         return static::instance('Africa/Addis_Ababa');
     }
@@ -90,7 +76,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function AdelaideAustralia()
+    public static function AdelaideAustralia(): self
     {
         return static::instance('Australia/Adelaide');
     }
@@ -102,7 +88,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function AdenAsia()
+    public static function AdenAsia(): self
     {
         return static::instance('Asia/Aden');
     }
@@ -114,7 +100,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function AlgiersAfrica()
+    public static function AlgiersAfrica(): self
     {
         return static::instance('Africa/Algiers');
     }
@@ -126,7 +112,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function AlmatyAsia()
+    public static function AlmatyAsia(): self
     {
         return static::instance('Asia/Almaty');
     }
@@ -138,7 +124,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function AmmanAsia()
+    public static function AmmanAsia(): self
     {
         return static::instance('Asia/Amman');
     }
@@ -150,7 +136,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function AmsterdamEurope()
+    public static function AmsterdamEurope(): self
     {
         return static::instance('Europe/Amsterdam');
     }
@@ -163,7 +149,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function AnadyrAsia()
+    public static function AnadyrAsia(): self
     {
         return static::instance('Asia/Anadyr');
     }
@@ -175,7 +161,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function AnchorageAmerica()
+    public static function AnchorageAmerica(): self
     {
         return static::instance('America/Anchorage');
     }
@@ -187,7 +173,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function AndorraEurope()
+    public static function AndorraEurope(): self
     {
         return static::instance('Europe/Andorra');
     }
@@ -199,7 +185,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function AnguillaAmerica()
+    public static function AnguillaAmerica(): self
     {
         return static::instance('America/Anguilla');
     }
@@ -211,7 +197,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function AntananarivoIndian()
+    public static function AntananarivoIndian(): self
     {
         return static::instance('Indian/Antananarivo');
     }
@@ -223,7 +209,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function AntiguaAmerica()
+    public static function AntiguaAmerica(): self
     {
         return static::instance('America/Antigua');
     }
@@ -235,7 +221,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function ApiaPacific()
+    public static function ApiaPacific(): self
     {
         return static::instance('Pacific/Apia');
     }
@@ -248,7 +234,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function AqtauAsia()
+    public static function AqtauAsia(): self
     {
         return static::instance('Asia/Aqtau');
     }
@@ -261,7 +247,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function AqtobeAsia()
+    public static function AqtobeAsia(): self
     {
         return static::instance('Asia/Aqtobe');
     }
@@ -274,7 +260,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function AraguainaAmerica()
+    public static function AraguainaAmerica(): self
     {
         return static::instance('America/Araguaina');
     }
@@ -286,7 +272,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function ArubaAmerica()
+    public static function ArubaAmerica(): self
     {
         return static::instance('America/Aruba');
     }
@@ -298,7 +284,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function AshgabatAsia()
+    public static function AshgabatAsia(): self
     {
         return static::instance('Asia/Ashgabat');
     }
@@ -310,7 +296,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function AsmaraAfrica()
+    public static function AsmaraAfrica(): self
     {
         return static::instance('Africa/Asmara');
     }
@@ -322,7 +308,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function AstrakhanEurope()
+    public static function AstrakhanEurope(): self
     {
         return static::instance('Europe/Astrakhan');
     }
@@ -334,7 +320,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function AsuncionAmerica()
+    public static function AsuncionAmerica(): self
     {
         return static::instance('America/Asuncion');
     }
@@ -346,7 +332,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function AthensEurope()
+    public static function AthensEurope(): self
     {
         return static::instance('Europe/Athens');
     }
@@ -359,7 +345,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function AtikokanAmerica()
+    public static function AtikokanAmerica(): self
     {
         return static::instance('America/Atikokan');
     }
@@ -372,7 +358,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function AtyrauAsia()
+    public static function AtyrauAsia(): self
     {
         return static::instance('Asia/Atyrau');
     }
@@ -384,7 +370,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function AucklandPacific()
+    public static function AucklandPacific(): self
     {
         return static::instance('Pacific/Auckland');
     }
@@ -396,7 +382,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function AzoresAtlantic()
+    public static function AzoresAtlantic(): self
     {
         return static::instance('Atlantic/Azores');
     }
@@ -408,7 +394,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function BaghdadAsia()
+    public static function BaghdadAsia(): self
     {
         return static::instance('Asia/Baghdad');
     }
@@ -420,7 +406,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function BahiaAmerica()
+    public static function BahiaAmerica(): self
     {
         return static::instance('America/Bahia');
     }
@@ -433,7 +419,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function BahiaBanderasAmerica()
+    public static function BahiaBanderasAmerica(): self
     {
         return static::instance('America/Bahia_Banderas');
     }
@@ -445,7 +431,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function BahrainAsia()
+    public static function BahrainAsia(): self
     {
         return static::instance('Asia/Bahrain');
     }
@@ -457,7 +443,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function BakuAsia()
+    public static function BakuAsia(): self
     {
         return static::instance('Asia/Baku');
     }
@@ -469,7 +455,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function BamakoAfrica()
+    public static function BamakoAfrica(): self
     {
         return static::instance('Africa/Bamako');
     }
@@ -481,7 +467,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function BangkokAsia()
+    public static function BangkokAsia(): self
     {
         return static::instance('Asia/Bangkok');
     }
@@ -493,7 +479,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function BanguiAfrica()
+    public static function BanguiAfrica(): self
     {
         return static::instance('Africa/Bangui');
     }
@@ -505,7 +491,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function BanjulAfrica()
+    public static function BanjulAfrica(): self
     {
         return static::instance('Africa/Banjul');
     }
@@ -517,7 +503,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function BarbadosAmerica()
+    public static function BarbadosAmerica(): self
     {
         return static::instance('America/Barbados');
     }
@@ -529,7 +515,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function BarnaulAsia()
+    public static function BarnaulAsia(): self
     {
         return static::instance('Asia/Barnaul');
     }
@@ -541,7 +527,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function BeirutAsia()
+    public static function BeirutAsia(): self
     {
         return static::instance('Asia/Beirut');
     }
@@ -553,7 +539,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function BelemAmerica()
+    public static function BelemAmerica(): self
     {
         return static::instance('America/Belem');
     }
@@ -565,7 +551,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function BelgradeEurope()
+    public static function BelgradeEurope(): self
     {
         return static::instance('Europe/Belgrade');
     }
@@ -577,7 +563,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function BelizeAmerica()
+    public static function BelizeAmerica(): self
     {
         return static::instance('America/Belize');
     }
@@ -589,7 +575,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function BerlinEurope()
+    public static function BerlinEurope(): self
     {
         return static::instance('Europe/Berlin');
     }
@@ -601,7 +587,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function BermudaAtlantic()
+    public static function BermudaAtlantic(): self
     {
         return static::instance('Atlantic/Bermuda');
     }
@@ -613,7 +599,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function BeulahNorthDakotaAmerica()
+    public static function BeulahNorthDakotaAmerica(): self
     {
         return static::instance('America/North_Dakota/Beulah');
     }
@@ -625,7 +611,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function BishkekAsia()
+    public static function BishkekAsia(): self
     {
         return static::instance('Asia/Bishkek');
     }
@@ -637,7 +623,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function BissauAfrica()
+    public static function BissauAfrica(): self
     {
         return static::instance('Africa/Bissau');
     }
@@ -650,7 +636,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function BlancSablonAmerica()
+    public static function BlancSablonAmerica(): self
     {
         return static::instance('America/Blanc-Sablon');
     }
@@ -662,7 +648,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function BlantyreAfrica()
+    public static function BlantyreAfrica(): self
     {
         return static::instance('Africa/Blantyre');
     }
@@ -674,7 +660,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function BoaVistaAmerica()
+    public static function BoaVistaAmerica(): self
     {
         return static::instance('America/Boa_Vista');
     }
@@ -686,7 +672,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function BogotaAmerica()
+    public static function BogotaAmerica(): self
     {
         return static::instance('America/Bogota');
     }
@@ -698,7 +684,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function BoiseAmerica()
+    public static function BoiseAmerica(): self
     {
         return static::instance('America/Boise');
     }
@@ -711,7 +697,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function BougainvillePacific()
+    public static function BougainvillePacific(): self
     {
         return static::instance('Pacific/Bougainville');
     }
@@ -723,7 +709,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function BratislavaEurope()
+    public static function BratislavaEurope(): self
     {
         return static::instance('Europe/Bratislava');
     }
@@ -735,7 +721,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function BrazzavilleAfrica()
+    public static function BrazzavilleAfrica(): self
     {
         return static::instance('Africa/Brazzaville');
     }
@@ -747,7 +733,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function BrisbaneAustralia()
+    public static function BrisbaneAustralia(): self
     {
         return static::instance('Australia/Brisbane');
     }
@@ -759,7 +745,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function BrokenHillAustralia()
+    public static function BrokenHillAustralia(): self
     {
         return static::instance('Australia/Broken_Hill');
     }
@@ -771,7 +757,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function BruneiAsia()
+    public static function BruneiAsia(): self
     {
         return static::instance('Asia/Brunei');
     }
@@ -783,7 +769,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function BrusselsEurope()
+    public static function BrusselsEurope(): self
     {
         return static::instance('Europe/Brussels');
     }
@@ -795,7 +781,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function BucharestEurope()
+    public static function BucharestEurope(): self
     {
         return static::instance('Europe/Bucharest');
     }
@@ -807,7 +793,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function BudapestEurope()
+    public static function BudapestEurope(): self
     {
         return static::instance('Europe/Budapest');
     }
@@ -819,7 +805,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function BuenosAiresArgentinaAmerica()
+    public static function BuenosAiresArgentinaAmerica(): self
     {
         return static::instance('America/Argentina/Buenos_Aires');
     }
@@ -831,7 +817,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function BujumburaAfrica()
+    public static function BujumburaAfrica(): self
     {
         return static::instance('Africa/Bujumbura');
     }
@@ -844,7 +830,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function BusingenEurope()
+    public static function BusingenEurope(): self
     {
         return static::instance('Europe/Busingen');
     }
@@ -856,7 +842,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function CairoAfrica()
+    public static function CairoAfrica(): self
     {
         return static::instance('Africa/Cairo');
     }
@@ -868,7 +854,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function CambridgeBayAmerica()
+    public static function CambridgeBayAmerica(): self
     {
         return static::instance('America/Cambridge_Bay');
     }
@@ -880,7 +866,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function CampoGrandeAmerica()
+    public static function CampoGrandeAmerica(): self
     {
         return static::instance('America/Campo_Grande');
     }
@@ -892,7 +878,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function CanaryAtlantic()
+    public static function CanaryAtlantic(): self
     {
         return static::instance('Atlantic/Canary');
     }
@@ -904,7 +890,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function CancunAmerica()
+    public static function CancunAmerica(): self
     {
         return static::instance('America/Cancun');
     }
@@ -916,7 +902,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function CapeVerdeAtlantic()
+    public static function CapeVerdeAtlantic(): self
     {
         return static::instance('Atlantic/Cape_Verde');
     }
@@ -928,7 +914,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function CaracasAmerica()
+    public static function CaracasAmerica(): self
     {
         return static::instance('America/Caracas');
     }
@@ -940,7 +926,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function CasablancaAfrica()
+    public static function CasablancaAfrica(): self
     {
         return static::instance('Africa/Casablanca');
     }
@@ -952,7 +938,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function CaseyAntarctica()
+    public static function CaseyAntarctica(): self
     {
         return static::instance('Antarctica/Casey');
     }
@@ -965,7 +951,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function CatamarcaArgentinaAmerica()
+    public static function CatamarcaArgentinaAmerica(): self
     {
         return static::instance('America/Argentina/Catamarca');
     }
@@ -977,7 +963,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function CayenneAmerica()
+    public static function CayenneAmerica(): self
     {
         return static::instance('America/Cayenne');
     }
@@ -989,7 +975,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function CaymanAmerica()
+    public static function CaymanAmerica(): self
     {
         return static::instance('America/Cayman');
     }
@@ -1001,7 +987,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function CenterNorthDakotaAmerica()
+    public static function CenterNorthDakotaAmerica(): self
     {
         return static::instance('America/North_Dakota/Center');
     }
@@ -1014,7 +1000,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function CeutaAfrica()
+    public static function CeutaAfrica(): self
     {
         return static::instance('Africa/Ceuta');
     }
@@ -1027,7 +1013,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function ChagosIndian()
+    public static function ChagosIndian(): self
     {
         return static::instance('Indian/Chagos');
     }
@@ -1040,7 +1026,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function ChathamPacific()
+    public static function ChathamPacific(): self
     {
         return static::instance('Pacific/Chatham');
     }
@@ -1052,7 +1038,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function ChicagoAmerica()
+    public static function ChicagoAmerica(): self
     {
         return static::instance('America/Chicago');
     }
@@ -1064,7 +1050,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function ChihuahuaAmerica()
+    public static function ChihuahuaAmerica(): self
     {
         return static::instance('America/Chihuahua');
     }
@@ -1076,7 +1062,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function ChisinauEurope()
+    public static function ChisinauEurope(): self
     {
         return static::instance('Europe/Chisinau');
     }
@@ -1089,7 +1075,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function ChitaAsia()
+    public static function ChitaAsia(): self
     {
         return static::instance('Asia/Chita');
     }
@@ -1102,7 +1088,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function ChoibalsanAsia()
+    public static function ChoibalsanAsia(): self
     {
         return static::instance('Asia/Choibalsan');
     }
@@ -1114,7 +1100,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function ChristmasIndian()
+    public static function ChristmasIndian(): self
     {
         return static::instance('Indian/Christmas');
     }
@@ -1127,7 +1113,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function ChuukPacific()
+    public static function ChuukPacific(): self
     {
         return static::instance('Pacific/Chuuk');
     }
@@ -1139,7 +1125,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function CocosIndian()
+    public static function CocosIndian(): self
     {
         return static::instance('Indian/Cocos');
     }
@@ -1151,7 +1137,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function ColomboAsia()
+    public static function ColomboAsia(): self
     {
         return static::instance('Asia/Colombo');
     }
@@ -1164,7 +1150,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function ComoroIndian()
+    public static function ComoroIndian(): self
     {
         return static::instance('Indian/Comoro');
     }
@@ -1176,7 +1162,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function ConakryAfrica()
+    public static function ConakryAfrica(): self
     {
         return static::instance('Africa/Conakry');
     }
@@ -1188,7 +1174,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function CopenhagenEurope()
+    public static function CopenhagenEurope(): self
     {
         return static::instance('Europe/Copenhagen');
     }
@@ -1200,7 +1186,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function CordobaArgentinaAmerica()
+    public static function CordobaArgentinaAmerica(): self
     {
         return static::instance('America/Argentina/Cordoba');
     }
@@ -1212,7 +1198,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function CostaRicaAmerica()
+    public static function CostaRicaAmerica(): self
     {
         return static::instance('America/Costa_Rica');
     }
@@ -1225,7 +1211,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function CrestonAmerica()
+    public static function CrestonAmerica(): self
     {
         return static::instance('America/Creston');
     }
@@ -1237,7 +1223,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function CuiabaAmerica()
+    public static function CuiabaAmerica(): self
     {
         return static::instance('America/Cuiaba');
     }
@@ -1249,7 +1235,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function CuracaoAmerica()
+    public static function CuracaoAmerica(): self
     {
         return static::instance('America/Curacao');
     }
@@ -1261,7 +1247,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function DakarAfrica()
+    public static function DakarAfrica(): self
     {
         return static::instance('Africa/Dakar');
     }
@@ -1273,7 +1259,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function DamascusAsia()
+    public static function DamascusAsia(): self
     {
         return static::instance('Asia/Damascus');
     }
@@ -1286,7 +1272,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function DanmarkshavnAmerica()
+    public static function DanmarkshavnAmerica(): self
     {
         return static::instance('America/Danmarkshavn');
     }
@@ -1298,7 +1284,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function DaresSalaamAfrica()
+    public static function DaresSalaamAfrica(): self
     {
         return static::instance('Africa/Dar_es_Salaam');
     }
@@ -1310,7 +1296,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function DarwinAustralia()
+    public static function DarwinAustralia(): self
     {
         return static::instance('Australia/Darwin');
     }
@@ -1322,7 +1308,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function DavisAntarctica()
+    public static function DavisAntarctica(): self
     {
         return static::instance('Antarctica/Davis');
     }
@@ -1334,7 +1320,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function DawsonAmerica()
+    public static function DawsonAmerica(): self
     {
         return static::instance('America/Dawson');
     }
@@ -1346,7 +1332,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function DawsonCreekAmerica()
+    public static function DawsonCreekAmerica(): self
     {
         return static::instance('America/Dawson_Creek');
     }
@@ -1358,7 +1344,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function DenverAmerica()
+    public static function DenverAmerica(): self
     {
         return static::instance('America/Denver');
     }
@@ -1370,7 +1356,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function DetroitAmerica()
+    public static function DetroitAmerica(): self
     {
         return static::instance('America/Detroit');
     }
@@ -1382,7 +1368,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function DhakaAsia()
+    public static function DhakaAsia(): self
     {
         return static::instance('Asia/Dhaka');
     }
@@ -1395,7 +1381,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function DiliAsia()
+    public static function DiliAsia(): self
     {
         return static::instance('Asia/Dili');
     }
@@ -1407,7 +1393,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function DjiboutiAfrica()
+    public static function DjiboutiAfrica(): self
     {
         return static::instance('Africa/Djibouti');
     }
@@ -1419,7 +1405,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function DominicaAmerica()
+    public static function DominicaAmerica(): self
     {
         return static::instance('America/Dominica');
     }
@@ -1431,7 +1417,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function DoualaAfrica()
+    public static function DoualaAfrica(): self
     {
         return static::instance('Africa/Douala');
     }
@@ -1443,7 +1429,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function DubaiAsia()
+    public static function DubaiAsia(): self
     {
         return static::instance('Asia/Dubai');
     }
@@ -1455,7 +1441,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function DublinEurope()
+    public static function DublinEurope(): self
     {
         return static::instance('Europe/Dublin');
     }
@@ -1468,7 +1454,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function DumontDUrvilleAntarctica()
+    public static function DumontDUrvilleAntarctica(): self
     {
         return static::instance('Antarctica/DumontDUrville');
     }
@@ -1480,7 +1466,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function DushanbeAsia()
+    public static function DushanbeAsia(): self
     {
         return static::instance('Asia/Dushanbe');
     }
@@ -1492,7 +1478,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function EasterPacific()
+    public static function EasterPacific(): self
     {
         return static::instance('Pacific/Easter');
     }
@@ -1504,7 +1490,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function EdmontonAmerica()
+    public static function EdmontonAmerica(): self
     {
         return static::instance('America/Edmonton');
     }
@@ -1517,7 +1503,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function EfatePacific()
+    public static function EfatePacific(): self
     {
         return static::instance('Pacific/Efate');
     }
@@ -1530,7 +1516,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function EirunepeAmerica()
+    public static function EirunepeAmerica(): self
     {
         return static::instance('America/Eirunepe');
     }
@@ -1543,7 +1529,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function ElAaiunAfrica()
+    public static function ElAaiunAfrica(): self
     {
         return static::instance('Africa/El_Aaiun');
     }
@@ -1555,7 +1541,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function ElSalvadorAmerica()
+    public static function ElSalvadorAmerica(): self
     {
         return static::instance('America/El_Salvador');
     }
@@ -1568,7 +1554,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function EuclaAustralia()
+    public static function EuclaAustralia(): self
     {
         return static::instance('Australia/Eucla');
     }
@@ -1581,7 +1567,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function FakaofoPacific()
+    public static function FakaofoPacific(): self
     {
         return static::instance('Pacific/Fakaofo');
     }
@@ -1594,7 +1580,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function FamagustaAsia()
+    public static function FamagustaAsia(): self
     {
         return static::instance('Asia/Famagusta');
     }
@@ -1607,7 +1593,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function FaroeAtlantic()
+    public static function FaroeAtlantic(): self
     {
         return static::instance('Atlantic/Faroe');
     }
@@ -1619,7 +1605,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function FijiPacific()
+    public static function FijiPacific(): self
     {
         return static::instance('Pacific/Fiji');
     }
@@ -1631,7 +1617,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function FortNelsonAmerica()
+    public static function FortNelsonAmerica(): self
     {
         return static::instance('America/Fort_Nelson');
     }
@@ -1643,7 +1629,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function FortalezaAmerica()
+    public static function FortalezaAmerica(): self
     {
         return static::instance('America/Fortaleza');
     }
@@ -1655,7 +1641,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function FreetownAfrica()
+    public static function FreetownAfrica(): self
     {
         return static::instance('Africa/Freetown');
     }
@@ -1667,7 +1653,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function FunafutiPacific()
+    public static function FunafutiPacific(): self
     {
         return static::instance('Pacific/Funafuti');
     }
@@ -1679,7 +1665,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function GaboroneAfrica()
+    public static function GaboroneAfrica(): self
     {
         return static::instance('Africa/Gaborone');
     }
@@ -1691,7 +1677,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function GalapagosPacific()
+    public static function GalapagosPacific(): self
     {
         return static::instance('Pacific/Galapagos');
     }
@@ -1703,7 +1689,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function GambierPacific()
+    public static function GambierPacific(): self
     {
         return static::instance('Pacific/Gambier');
     }
@@ -1715,7 +1701,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function GazaAsia()
+    public static function GazaAsia(): self
     {
         return static::instance('Asia/Gaza');
     }
@@ -1727,7 +1713,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function GibraltarEurope()
+    public static function GibraltarEurope(): self
     {
         return static::instance('Europe/Gibraltar');
     }
@@ -1739,7 +1725,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function GlaceBayAmerica()
+    public static function GlaceBayAmerica(): self
     {
         return static::instance('America/Glace_Bay');
     }
@@ -1751,7 +1737,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function GooseBayAmerica()
+    public static function GooseBayAmerica(): self
     {
         return static::instance('America/Goose_Bay');
     }
@@ -1763,7 +1749,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function GrandTurkAmerica()
+    public static function GrandTurkAmerica(): self
     {
         return static::instance('America/Grand_Turk');
     }
@@ -1775,7 +1761,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function GrenadaAmerica()
+    public static function GrenadaAmerica(): self
     {
         return static::instance('America/Grenada');
     }
@@ -1787,7 +1773,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function GuadalcanalPacific()
+    public static function GuadalcanalPacific(): self
     {
         return static::instance('Pacific/Guadalcanal');
     }
@@ -1799,7 +1785,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function GuadeloupeAmerica()
+    public static function GuadeloupeAmerica(): self
     {
         return static::instance('America/Guadeloupe');
     }
@@ -1811,7 +1797,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function GuamPacific()
+    public static function GuamPacific(): self
     {
         return static::instance('Pacific/Guam');
     }
@@ -1823,7 +1809,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function GuatemalaAmerica()
+    public static function GuatemalaAmerica(): self
     {
         return static::instance('America/Guatemala');
     }
@@ -1835,7 +1821,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function GuayaquilAmerica()
+    public static function GuayaquilAmerica(): self
     {
         return static::instance('America/Guayaquil');
     }
@@ -1847,7 +1833,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function GuernseyEurope()
+    public static function GuernseyEurope(): self
     {
         return static::instance('Europe/Guernsey');
     }
@@ -1859,7 +1845,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function GuyanaAmerica()
+    public static function GuyanaAmerica(): self
     {
         return static::instance('America/Guyana');
     }
@@ -1871,7 +1857,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function HalifaxAmerica()
+    public static function HalifaxAmerica(): self
     {
         return static::instance('America/Halifax');
     }
@@ -1883,7 +1869,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function HarareAfrica()
+    public static function HarareAfrica(): self
     {
         return static::instance('Africa/Harare');
     }
@@ -1895,7 +1881,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function HavanaAmerica()
+    public static function HavanaAmerica(): self
     {
         return static::instance('America/Havana');
     }
@@ -1908,7 +1894,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function HebronAsia()
+    public static function HebronAsia(): self
     {
         return static::instance('Asia/Hebron');
     }
@@ -1920,7 +1906,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function HelsinkiEurope()
+    public static function HelsinkiEurope(): self
     {
         return static::instance('Europe/Helsinki');
     }
@@ -1932,7 +1918,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function HermosilloAmerica()
+    public static function HermosilloAmerica(): self
     {
         return static::instance('America/Hermosillo');
     }
@@ -1944,7 +1930,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function HoChiMinhAsia()
+    public static function HoChiMinhAsia(): self
     {
         return static::instance('Asia/Ho_Chi_Minh');
     }
@@ -1956,7 +1942,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function HobartAustralia()
+    public static function HobartAustralia(): self
     {
         return static::instance('Australia/Hobart');
     }
@@ -1968,7 +1954,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function HongKongAsia()
+    public static function HongKongAsia(): self
     {
         return static::instance('Asia/Hong_Kong');
     }
@@ -1980,7 +1966,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function HonoluluPacific()
+    public static function HonoluluPacific(): self
     {
         return static::instance('Pacific/Honolulu');
     }
@@ -1993,7 +1979,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function HovdAsia()
+    public static function HovdAsia(): self
     {
         return static::instance('Asia/Hovd');
     }
@@ -2005,7 +1991,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function IndianapolisIndianaAmerica()
+    public static function IndianapolisIndianaAmerica(): self
     {
         return static::instance('America/Indiana/Indianapolis');
     }
@@ -2018,7 +2004,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function InuvikAmerica()
+    public static function InuvikAmerica(): self
     {
         return static::instance('America/Inuvik');
     }
@@ -2030,7 +2016,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function IqaluitAmerica()
+    public static function IqaluitAmerica(): self
     {
         return static::instance('America/Iqaluit');
     }
@@ -2042,7 +2028,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function IrkutskAsia()
+    public static function IrkutskAsia(): self
     {
         return static::instance('Asia/Irkutsk');
     }
@@ -2055,7 +2041,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function IsleofManEurope()
+    public static function IsleofManEurope(): self
     {
         return static::instance('Europe/Isle_of_Man');
     }
@@ -2067,7 +2053,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function IstanbulEurope()
+    public static function IstanbulEurope(): self
     {
         return static::instance('Europe/Istanbul');
     }
@@ -2079,7 +2065,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function JakartaAsia()
+    public static function JakartaAsia(): self
     {
         return static::instance('Asia/Jakarta');
     }
@@ -2091,7 +2077,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function JamaicaAmerica()
+    public static function JamaicaAmerica(): self
     {
         return static::instance('America/Jamaica');
     }
@@ -2103,7 +2089,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function JayapuraAsia()
+    public static function JayapuraAsia(): self
     {
         return static::instance('Asia/Jayapura');
     }
@@ -2115,7 +2101,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function JerseyEurope()
+    public static function JerseyEurope(): self
     {
         return static::instance('Europe/Jersey');
     }
@@ -2127,7 +2113,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function JerusalemAsia()
+    public static function JerusalemAsia(): self
     {
         return static::instance('Asia/Jerusalem');
     }
@@ -2139,7 +2125,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function JohannesburgAfrica()
+    public static function JohannesburgAfrica(): self
     {
         return static::instance('Africa/Johannesburg');
     }
@@ -2152,7 +2138,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function JubaAfrica()
+    public static function JubaAfrica(): self
     {
         return static::instance('Africa/Juba');
     }
@@ -2165,7 +2151,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function JujuyArgentinaAmerica()
+    public static function JujuyArgentinaAmerica(): self
     {
         return static::instance('America/Argentina/Jujuy');
     }
@@ -2177,7 +2163,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function JuneauAmerica()
+    public static function JuneauAmerica(): self
     {
         return static::instance('America/Juneau');
     }
@@ -2189,7 +2175,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function KabulAsia()
+    public static function KabulAsia(): self
     {
         return static::instance('Asia/Kabul');
     }
@@ -2202,7 +2188,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function KaliningradEurope()
+    public static function KaliningradEurope(): self
     {
         return static::instance('Europe/Kaliningrad');
     }
@@ -2214,7 +2200,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function KamchatkaAsia()
+    public static function KamchatkaAsia(): self
     {
         return static::instance('Asia/Kamchatka');
     }
@@ -2226,7 +2212,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function KampalaAfrica()
+    public static function KampalaAfrica(): self
     {
         return static::instance('Africa/Kampala');
     }
@@ -2238,7 +2224,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function KantonPacific()
+    public static function KantonPacific(): self
     {
         return static::instance('Pacific/Kanton');
     }
@@ -2250,7 +2236,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function KarachiAsia()
+    public static function KarachiAsia(): self
     {
         return static::instance('Asia/Karachi');
     }
@@ -2262,7 +2248,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function KathmanduAsia()
+    public static function KathmanduAsia(): self
     {
         return static::instance('Asia/Kathmandu');
     }
@@ -2275,7 +2261,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function KerguelenIndian()
+    public static function KerguelenIndian(): self
     {
         return static::instance('Indian/Kerguelen');
     }
@@ -2288,7 +2274,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function KhandygaAsia()
+    public static function KhandygaAsia(): self
     {
         return static::instance('Asia/Khandyga');
     }
@@ -2300,7 +2286,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function KhartoumAfrica()
+    public static function KhartoumAfrica(): self
     {
         return static::instance('Africa/Khartoum');
     }
@@ -2312,7 +2298,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function KievEurope()
+    public static function KievEurope(): self
     {
         return static::instance('Europe/Kiev');
     }
@@ -2324,7 +2310,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function KigaliAfrica()
+    public static function KigaliAfrica(): self
     {
         return static::instance('Africa/Kigali');
     }
@@ -2336,7 +2322,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function KinshasaAfrica()
+    public static function KinshasaAfrica(): self
     {
         return static::instance('Africa/Kinshasa');
     }
@@ -2349,7 +2335,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function KiritimatiPacific()
+    public static function KiritimatiPacific(): self
     {
         return static::instance('Pacific/Kiritimati');
     }
@@ -2361,7 +2347,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function KirovEurope()
+    public static function KirovEurope(): self
     {
         return static::instance('Europe/Kirov');
     }
@@ -2373,7 +2359,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function KnoxIndianaAmerica()
+    public static function KnoxIndianaAmerica(): self
     {
         return static::instance('America/Indiana/Knox');
     }
@@ -2385,7 +2371,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function KolkataAsia()
+    public static function KolkataAsia(): self
     {
         return static::instance('Asia/Kolkata');
     }
@@ -2398,7 +2384,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function KosraePacific()
+    public static function KosraePacific(): self
     {
         return static::instance('Pacific/Kosrae');
     }
@@ -2411,7 +2397,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function KralendijkAmerica()
+    public static function KralendijkAmerica(): self
     {
         return static::instance('America/Kralendijk');
     }
@@ -2423,7 +2409,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function KrasnoyarskAsia()
+    public static function KrasnoyarskAsia(): self
     {
         return static::instance('Asia/Krasnoyarsk');
     }
@@ -2435,7 +2421,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function KualaLumpurAsia()
+    public static function KualaLumpurAsia(): self
     {
         return static::instance('Asia/Kuala_Lumpur');
     }
@@ -2448,7 +2434,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function KuchingAsia()
+    public static function KuchingAsia(): self
     {
         return static::instance('Asia/Kuching');
     }
@@ -2460,7 +2446,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function KuwaitAsia()
+    public static function KuwaitAsia(): self
     {
         return static::instance('Asia/Kuwait');
     }
@@ -2472,7 +2458,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function KwajaleinPacific()
+    public static function KwajaleinPacific(): self
     {
         return static::instance('Pacific/Kwajalein');
     }
@@ -2484,7 +2470,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function LaPazAmerica()
+    public static function LaPazAmerica(): self
     {
         return static::instance('America/La_Paz');
     }
@@ -2497,7 +2483,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function LaRiojaArgentinaAmerica()
+    public static function LaRiojaArgentinaAmerica(): self
     {
         return static::instance('America/Argentina/La_Rioja');
     }
@@ -2509,7 +2495,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function LagosAfrica()
+    public static function LagosAfrica(): self
     {
         return static::instance('Africa/Lagos');
     }
@@ -2521,7 +2507,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function LibrevilleAfrica()
+    public static function LibrevilleAfrica(): self
     {
         return static::instance('Africa/Libreville');
     }
@@ -2533,7 +2519,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function LimaAmerica()
+    public static function LimaAmerica(): self
     {
         return static::instance('America/Lima');
     }
@@ -2546,7 +2532,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function LindemanAustralia()
+    public static function LindemanAustralia(): self
     {
         return static::instance('Australia/Lindeman');
     }
@@ -2558,7 +2544,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function LisbonEurope()
+    public static function LisbonEurope(): self
     {
         return static::instance('Europe/Lisbon');
     }
@@ -2570,7 +2556,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function LjubljanaEurope()
+    public static function LjubljanaEurope(): self
     {
         return static::instance('Europe/Ljubljana');
     }
@@ -2582,7 +2568,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function LomeAfrica()
+    public static function LomeAfrica(): self
     {
         return static::instance('Africa/Lome');
     }
@@ -2594,7 +2580,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function LondonEurope()
+    public static function LondonEurope(): self
     {
         return static::instance('Europe/London');
     }
@@ -2607,7 +2593,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function LongyearbyenArctic()
+    public static function LongyearbyenArctic(): self
     {
         return static::instance('Arctic/Longyearbyen');
     }
@@ -2619,7 +2605,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function LordHoweAustralia()
+    public static function LordHoweAustralia(): self
     {
         return static::instance('Australia/Lord_Howe');
     }
@@ -2631,7 +2617,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function LosAngelesAmerica()
+    public static function LosAngelesAmerica(): self
     {
         return static::instance('America/Los_Angeles');
     }
@@ -2643,7 +2629,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function LouisvilleKentuckyAmerica()
+    public static function LouisvilleKentuckyAmerica(): self
     {
         return static::instance('America/Kentucky/Louisville');
     }
@@ -2655,7 +2641,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function LowerPrincesAmerica()
+    public static function LowerPrincesAmerica(): self
     {
         return static::instance('America/Lower_Princes');
     }
@@ -2667,7 +2653,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function LuandaAfrica()
+    public static function LuandaAfrica(): self
     {
         return static::instance('Africa/Luanda');
     }
@@ -2679,7 +2665,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function LubumbashiAfrica()
+    public static function LubumbashiAfrica(): self
     {
         return static::instance('Africa/Lubumbashi');
     }
@@ -2691,7 +2677,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function LusakaAfrica()
+    public static function LusakaAfrica(): self
     {
         return static::instance('Africa/Lusaka');
     }
@@ -2703,7 +2689,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function LuxembourgEurope()
+    public static function LuxembourgEurope(): self
     {
         return static::instance('Europe/Luxembourg');
     }
@@ -2715,7 +2701,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function MacauAsia()
+    public static function MacauAsia(): self
     {
         return static::instance('Asia/Macau');
     }
@@ -2727,7 +2713,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function MaceioAmerica()
+    public static function MaceioAmerica(): self
     {
         return static::instance('America/Maceio');
     }
@@ -2739,7 +2725,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function MacquarieAntarctica()
+    public static function MacquarieAntarctica(): self
     {
         return static::instance('Antarctica/Macquarie');
     }
@@ -2751,7 +2737,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function MadeiraAtlantic()
+    public static function MadeiraAtlantic(): self
     {
         return static::instance('Atlantic/Madeira');
     }
@@ -2763,7 +2749,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function MadridEurope()
+    public static function MadridEurope(): self
     {
         return static::instance('Europe/Madrid');
     }
@@ -2776,7 +2762,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function MagadanAsia()
+    public static function MagadanAsia(): self
     {
         return static::instance('Asia/Magadan');
     }
@@ -2788,7 +2774,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function MaheIndian()
+    public static function MaheIndian(): self
     {
         return static::instance('Indian/Mahe');
     }
@@ -2800,7 +2786,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function MajuroPacific()
+    public static function MajuroPacific(): self
     {
         return static::instance('Pacific/Majuro');
     }
@@ -2813,7 +2799,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function MakassarAsia()
+    public static function MakassarAsia(): self
     {
         return static::instance('Asia/Makassar');
     }
@@ -2825,7 +2811,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function MalaboAfrica()
+    public static function MalaboAfrica(): self
     {
         return static::instance('Africa/Malabo');
     }
@@ -2837,7 +2823,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function MaldivesIndian()
+    public static function MaldivesIndian(): self
     {
         return static::instance('Indian/Maldives');
     }
@@ -2849,7 +2835,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function MaltaEurope()
+    public static function MaltaEurope(): self
     {
         return static::instance('Europe/Malta');
     }
@@ -2861,7 +2847,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function ManaguaAmerica()
+    public static function ManaguaAmerica(): self
     {
         return static::instance('America/Managua');
     }
@@ -2874,7 +2860,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function ManausAmerica()
+    public static function ManausAmerica(): self
     {
         return static::instance('America/Manaus');
     }
@@ -2886,7 +2872,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function ManilaAsia()
+    public static function ManilaAsia(): self
     {
         return static::instance('Asia/Manila');
     }
@@ -2898,7 +2884,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function MaputoAfrica()
+    public static function MaputoAfrica(): self
     {
         return static::instance('Africa/Maputo');
     }
@@ -2911,7 +2897,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function MarengoIndianaAmerica()
+    public static function MarengoIndianaAmerica(): self
     {
         return static::instance('America/Indiana/Marengo');
     }
@@ -2924,7 +2910,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function MariehamnEurope()
+    public static function MariehamnEurope(): self
     {
         return static::instance('Europe/Mariehamn');
     }
@@ -2937,7 +2923,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function MarigotAmerica()
+    public static function MarigotAmerica(): self
     {
         return static::instance('America/Marigot');
     }
@@ -2949,7 +2935,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function MarquesasPacific()
+    public static function MarquesasPacific(): self
     {
         return static::instance('Pacific/Marquesas');
     }
@@ -2961,7 +2947,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function MartiniqueAmerica()
+    public static function MartiniqueAmerica(): self
     {
         return static::instance('America/Martinique');
     }
@@ -2973,7 +2959,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function MaseruAfrica()
+    public static function MaseruAfrica(): self
     {
         return static::instance('Africa/Maseru');
     }
@@ -2985,7 +2971,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function MatamorosAmerica()
+    public static function MatamorosAmerica(): self
     {
         return static::instance('America/Matamoros');
     }
@@ -2997,7 +2983,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function MauritiusIndian()
+    public static function MauritiusIndian(): self
     {
         return static::instance('Indian/Mauritius');
     }
@@ -3010,7 +2996,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function MawsonAntarctica()
+    public static function MawsonAntarctica(): self
     {
         return static::instance('Antarctica/Mawson');
     }
@@ -3023,7 +3009,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function MayotteIndian()
+    public static function MayotteIndian(): self
     {
         return static::instance('Indian/Mayotte');
     }
@@ -3035,7 +3021,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function MazatlanAmerica()
+    public static function MazatlanAmerica(): self
     {
         return static::instance('America/Mazatlan');
     }
@@ -3047,7 +3033,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function MbabaneAfrica()
+    public static function MbabaneAfrica(): self
     {
         return static::instance('Africa/Mbabane');
     }
@@ -3060,7 +3046,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function McMurdoAntarctica()
+    public static function McMurdoAntarctica(): self
     {
         return static::instance('Antarctica/McMurdo');
     }
@@ -3072,7 +3058,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function MelbourneAustralia()
+    public static function MelbourneAustralia(): self
     {
         return static::instance('Australia/Melbourne');
     }
@@ -3084,7 +3070,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function MendozaArgentinaAmerica()
+    public static function MendozaArgentinaAmerica(): self
     {
         return static::instance('America/Argentina/Mendoza');
     }
@@ -3096,7 +3082,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function MenomineeAmerica()
+    public static function MenomineeAmerica(): self
     {
         return static::instance('America/Menominee');
     }
@@ -3108,7 +3094,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function MeridaAmerica()
+    public static function MeridaAmerica(): self
     {
         return static::instance('America/Merida');
     }
@@ -3121,7 +3107,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function MetlakatlaAmerica()
+    public static function MetlakatlaAmerica(): self
     {
         return static::instance('America/Metlakatla');
     }
@@ -3133,7 +3119,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function MexicoCityAmerica()
+    public static function MexicoCityAmerica(): self
     {
         return static::instance('America/Mexico_City');
     }
@@ -3145,7 +3131,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function MidwayPacific()
+    public static function MidwayPacific(): self
     {
         return static::instance('Pacific/Midway');
     }
@@ -3157,7 +3143,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function MinskEurope()
+    public static function MinskEurope(): self
     {
         return static::instance('Europe/Minsk');
     }
@@ -3169,7 +3155,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function MiquelonAmerica()
+    public static function MiquelonAmerica(): self
     {
         return static::instance('America/Miquelon');
     }
@@ -3181,7 +3167,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function MogadishuAfrica()
+    public static function MogadishuAfrica(): self
     {
         return static::instance('Africa/Mogadishu');
     }
@@ -3193,7 +3179,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function MonacoEurope()
+    public static function MonacoEurope(): self
     {
         return static::instance('Europe/Monaco');
     }
@@ -3206,7 +3192,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function MonctonAmerica()
+    public static function MonctonAmerica(): self
     {
         return static::instance('America/Moncton');
     }
@@ -3218,7 +3204,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function MonroviaAfrica()
+    public static function MonroviaAfrica(): self
     {
         return static::instance('Africa/Monrovia');
     }
@@ -3230,7 +3216,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function MonterreyAmerica()
+    public static function MonterreyAmerica(): self
     {
         return static::instance('America/Monterrey');
     }
@@ -3242,7 +3228,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function MontevideoAmerica()
+    public static function MontevideoAmerica(): self
     {
         return static::instance('America/Montevideo');
     }
@@ -3254,7 +3240,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function MonticelloKentuckyAmerica()
+    public static function MonticelloKentuckyAmerica(): self
     {
         return static::instance('America/Kentucky/Monticello');
     }
@@ -3266,7 +3252,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function MontserratAmerica()
+    public static function MontserratAmerica(): self
     {
         return static::instance('America/Montserrat');
     }
@@ -3278,7 +3264,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function MoscowEurope()
+    public static function MoscowEurope(): self
     {
         return static::instance('Europe/Moscow');
     }
@@ -3290,7 +3276,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function MuscatAsia()
+    public static function MuscatAsia(): self
     {
         return static::instance('Asia/Muscat');
     }
@@ -3302,7 +3288,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function NairobiAfrica()
+    public static function NairobiAfrica(): self
     {
         return static::instance('Africa/Nairobi');
     }
@@ -3314,7 +3300,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function NassauAmerica()
+    public static function NassauAmerica(): self
     {
         return static::instance('America/Nassau');
     }
@@ -3326,7 +3312,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function NauruPacific()
+    public static function NauruPacific(): self
     {
         return static::instance('Pacific/Nauru');
     }
@@ -3338,7 +3324,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function NdjamenaAfrica()
+    public static function NdjamenaAfrica(): self
     {
         return static::instance('Africa/Ndjamena');
     }
@@ -3350,7 +3336,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function NewSalemNorthDakotaAmerica()
+    public static function NewSalemNorthDakotaAmerica(): self
     {
         return static::instance('America/North_Dakota/New_Salem');
     }
@@ -3362,7 +3348,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function NewYorkAmerica()
+    public static function NewYorkAmerica(): self
     {
         return static::instance('America/New_York');
     }
@@ -3374,7 +3360,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function NiameyAfrica()
+    public static function NiameyAfrica(): self
     {
         return static::instance('Africa/Niamey');
     }
@@ -3386,7 +3372,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function NicosiaAsia()
+    public static function NicosiaAsia(): self
     {
         return static::instance('Asia/Nicosia');
     }
@@ -3399,7 +3385,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function NipigonAmerica()
+    public static function NipigonAmerica(): self
     {
         return static::instance('America/Nipigon');
     }
@@ -3412,7 +3398,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function NiuePacific()
+    public static function NiuePacific(): self
     {
         return static::instance('Pacific/Niue');
     }
@@ -3424,7 +3410,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function NomeAmerica()
+    public static function NomeAmerica(): self
     {
         return static::instance('America/Nome');
     }
@@ -3436,7 +3422,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function NorfolkPacific()
+    public static function NorfolkPacific(): self
     {
         return static::instance('Pacific/Norfolk');
     }
@@ -3449,7 +3435,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function NoronhaAmerica()
+    public static function NoronhaAmerica(): self
     {
         return static::instance('America/Noronha');
     }
@@ -3461,7 +3447,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function NouakchottAfrica()
+    public static function NouakchottAfrica(): self
     {
         return static::instance('Africa/Nouakchott');
     }
@@ -3473,7 +3459,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function NoumeaPacific()
+    public static function NoumeaPacific(): self
     {
         return static::instance('Pacific/Noumea');
     }
@@ -3485,7 +3471,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function NovokuznetskAsia()
+    public static function NovokuznetskAsia(): self
     {
         return static::instance('Asia/Novokuznetsk');
     }
@@ -3497,7 +3483,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function NovosibirskAsia()
+    public static function NovosibirskAsia(): self
     {
         return static::instance('Asia/Novosibirsk');
     }
@@ -3510,7 +3496,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function NuukAmerica()
+    public static function NuukAmerica(): self
     {
         return static::instance('America/Nuuk');
     }
@@ -3523,7 +3509,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function OjinagaAmerica()
+    public static function OjinagaAmerica(): self
     {
         return static::instance('America/Ojinaga');
     }
@@ -3535,7 +3521,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function OmskAsia()
+    public static function OmskAsia(): self
     {
         return static::instance('Asia/Omsk');
     }
@@ -3547,7 +3533,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function OralAsia()
+    public static function OralAsia(): self
     {
         return static::instance('Asia/Oral');
     }
@@ -3559,7 +3545,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function OsloEurope()
+    public static function OsloEurope(): self
     {
         return static::instance('Europe/Oslo');
     }
@@ -3571,7 +3557,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function OuagadougouAfrica()
+    public static function OuagadougouAfrica(): self
     {
         return static::instance('Africa/Ouagadougou');
     }
@@ -3583,7 +3569,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function PagoPagoPacific()
+    public static function PagoPagoPacific(): self
     {
         return static::instance('Pacific/Pago_Pago');
     }
@@ -3596,7 +3582,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function PalauPacific()
+    public static function PalauPacific(): self
     {
         return static::instance('Pacific/Palau');
     }
@@ -3608,7 +3594,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function PalmerAntarctica()
+    public static function PalmerAntarctica(): self
     {
         return static::instance('Antarctica/Palmer');
     }
@@ -3620,7 +3606,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function PanamaAmerica()
+    public static function PanamaAmerica(): self
     {
         return static::instance('America/Panama');
     }
@@ -3633,7 +3619,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function PangnirtungAmerica()
+    public static function PangnirtungAmerica(): self
     {
         return static::instance('America/Pangnirtung');
     }
@@ -3645,7 +3631,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function ParamariboAmerica()
+    public static function ParamariboAmerica(): self
     {
         return static::instance('America/Paramaribo');
     }
@@ -3657,7 +3643,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function ParisEurope()
+    public static function ParisEurope(): self
     {
         return static::instance('Europe/Paris');
     }
@@ -3669,7 +3655,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function PerthAustralia()
+    public static function PerthAustralia(): self
     {
         return static::instance('Australia/Perth');
     }
@@ -3681,7 +3667,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function PetersburgIndianaAmerica()
+    public static function PetersburgIndianaAmerica(): self
     {
         return static::instance('America/Indiana/Petersburg');
     }
@@ -3694,7 +3680,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function PhnomPenhAsia()
+    public static function PhnomPenhAsia(): self
     {
         return static::instance('Asia/Phnom_Penh');
     }
@@ -3706,7 +3692,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function PhoenixAmerica()
+    public static function PhoenixAmerica(): self
     {
         return static::instance('America/Phoenix');
     }
@@ -3718,7 +3704,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function PitcairnPacific()
+    public static function PitcairnPacific(): self
     {
         return static::instance('Pacific/Pitcairn');
     }
@@ -3730,7 +3716,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function PodgoricaEurope()
+    public static function PodgoricaEurope(): self
     {
         return static::instance('Europe/Podgorica');
     }
@@ -3743,7 +3729,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function PohnpeiPacific()
+    public static function PohnpeiPacific(): self
     {
         return static::instance('Pacific/Pohnpei');
     }
@@ -3755,7 +3741,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function PontianakAsia()
+    public static function PontianakAsia(): self
     {
         return static::instance('Asia/Pontianak');
     }
@@ -3768,7 +3754,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function PortMoresbyPacific()
+    public static function PortMoresbyPacific(): self
     {
         return static::instance('Pacific/Port_Moresby');
     }
@@ -3781,7 +3767,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function PortauPrinceAmerica()
+    public static function PortauPrinceAmerica(): self
     {
         return static::instance('America/Port-au-Prince');
     }
@@ -3794,7 +3780,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function PortoNovoAfrica()
+    public static function PortoNovoAfrica(): self
     {
         return static::instance('Africa/Porto-Novo');
     }
@@ -3807,7 +3793,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function PortoVelhoAmerica()
+    public static function PortoVelhoAmerica(): self
     {
         return static::instance('America/Porto_Velho');
     }
@@ -3820,7 +3806,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function PortofSpainAmerica()
+    public static function PortofSpainAmerica(): self
     {
         return static::instance('America/Port_of_Spain');
     }
@@ -3832,7 +3818,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function PragueEurope()
+    public static function PragueEurope(): self
     {
         return static::instance('Europe/Prague');
     }
@@ -3844,7 +3830,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function PuertoRicoAmerica()
+    public static function PuertoRicoAmerica(): self
     {
         return static::instance('America/Puerto_Rico');
     }
@@ -3857,7 +3843,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function PuntaArenasAmerica()
+    public static function PuntaArenasAmerica(): self
     {
         return static::instance('America/Punta_Arenas');
     }
@@ -3869,7 +3855,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function PyongyangAsia()
+    public static function PyongyangAsia(): self
     {
         return static::instance('Asia/Pyongyang');
     }
@@ -3881,7 +3867,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function QatarAsia()
+    public static function QatarAsia(): self
     {
         return static::instance('Asia/Qatar');
     }
@@ -3894,7 +3880,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function QostanayAsia()
+    public static function QostanayAsia(): self
     {
         return static::instance('Asia/Qostanay');
     }
@@ -3907,7 +3893,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function QyzylordaAsia()
+    public static function QyzylordaAsia(): self
     {
         return static::instance('Asia/Qyzylorda');
     }
@@ -3919,7 +3905,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function RainyRiverAmerica()
+    public static function RainyRiverAmerica(): self
     {
         return static::instance('America/Rainy_River');
     }
@@ -3931,7 +3917,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function RankinInletAmerica()
+    public static function RankinInletAmerica(): self
     {
         return static::instance('America/Rankin_Inlet');
     }
@@ -3944,7 +3930,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function RarotongaPacific()
+    public static function RarotongaPacific(): self
     {
         return static::instance('Pacific/Rarotonga');
     }
@@ -3956,7 +3942,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function RecifeAmerica()
+    public static function RecifeAmerica(): self
     {
         return static::instance('America/Recife');
     }
@@ -3968,7 +3954,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function ReginaAmerica()
+    public static function ReginaAmerica(): self
     {
         return static::instance('America/Regina');
     }
@@ -3980,7 +3966,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function ResoluteAmerica()
+    public static function ResoluteAmerica(): self
     {
         return static::instance('America/Resolute');
     }
@@ -3992,7 +3978,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function ReunionIndian()
+    public static function ReunionIndian(): self
     {
         return static::instance('Indian/Reunion');
     }
@@ -4004,7 +3990,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function ReykjavikAtlantic()
+    public static function ReykjavikAtlantic(): self
     {
         return static::instance('Atlantic/Reykjavik');
     }
@@ -4016,7 +4002,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function RigaEurope()
+    public static function RigaEurope(): self
     {
         return static::instance('Europe/Riga');
     }
@@ -4029,7 +4015,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function RioBrancoAmerica()
+    public static function RioBrancoAmerica(): self
     {
         return static::instance('America/Rio_Branco');
     }
@@ -4041,7 +4027,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function RioGallegosArgentinaAmerica()
+    public static function RioGallegosArgentinaAmerica(): self
     {
         return static::instance('America/Argentina/Rio_Gallegos');
     }
@@ -4053,7 +4039,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function RiyadhAsia()
+    public static function RiyadhAsia(): self
     {
         return static::instance('Asia/Riyadh');
     }
@@ -4065,7 +4051,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function RomeEurope()
+    public static function RomeEurope(): self
     {
         return static::instance('Europe/Rome');
     }
@@ -4078,7 +4064,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function RotheraAntarctica()
+    public static function RotheraAntarctica(): self
     {
         return static::instance('Antarctica/Rothera');
     }
@@ -4091,7 +4077,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function SaipanPacific()
+    public static function SaipanPacific(): self
     {
         return static::instance('Pacific/Saipan');
     }
@@ -4103,7 +4089,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function SakhalinAsia()
+    public static function SakhalinAsia(): self
     {
         return static::instance('Asia/Sakhalin');
     }
@@ -4116,7 +4102,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function SaltaArgentinaAmerica()
+    public static function SaltaArgentinaAmerica(): self
     {
         return static::instance('America/Argentina/Salta');
     }
@@ -4128,7 +4114,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function SamaraEurope()
+    public static function SamaraEurope(): self
     {
         return static::instance('Europe/Samara');
     }
@@ -4140,7 +4126,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function SamarkandAsia()
+    public static function SamarkandAsia(): self
     {
         return static::instance('Asia/Samarkand');
     }
@@ -4152,7 +4138,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function SanJuanArgentinaAmerica()
+    public static function SanJuanArgentinaAmerica(): self
     {
         return static::instance('America/Argentina/San_Juan');
     }
@@ -4164,7 +4150,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function SanLuisArgentinaAmerica()
+    public static function SanLuisArgentinaAmerica(): self
     {
         return static::instance('America/Argentina/San_Luis');
     }
@@ -4176,7 +4162,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function SanMarinoEurope()
+    public static function SanMarinoEurope(): self
     {
         return static::instance('Europe/San_Marino');
     }
@@ -4189,7 +4175,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function SantaremAmerica()
+    public static function SantaremAmerica(): self
     {
         return static::instance('America/Santarem');
     }
@@ -4201,7 +4187,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function SantiagoAmerica()
+    public static function SantiagoAmerica(): self
     {
         return static::instance('America/Santiago');
     }
@@ -4213,7 +4199,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function SantoDomingoAmerica()
+    public static function SantoDomingoAmerica(): self
     {
         return static::instance('America/Santo_Domingo');
     }
@@ -4225,7 +4211,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function SaoPauloAmerica()
+    public static function SaoPauloAmerica(): self
     {
         return static::instance('America/Sao_Paulo');
     }
@@ -4237,7 +4223,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function SaoTomeAfrica()
+    public static function SaoTomeAfrica(): self
     {
         return static::instance('Africa/Sao_Tome');
     }
@@ -4249,7 +4235,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function SarajevoEurope()
+    public static function SarajevoEurope(): self
     {
         return static::instance('Europe/Sarajevo');
     }
@@ -4261,7 +4247,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function SaratovEurope()
+    public static function SaratovEurope(): self
     {
         return static::instance('Europe/Saratov');
     }
@@ -4274,7 +4260,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function ScoresbysundAmerica()
+    public static function ScoresbysundAmerica(): self
     {
         return static::instance('America/Scoresbysund');
     }
@@ -4286,7 +4272,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function SeoulAsia()
+    public static function SeoulAsia(): self
     {
         return static::instance('Asia/Seoul');
     }
@@ -4298,7 +4284,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function ShanghaiAsia()
+    public static function ShanghaiAsia(): self
     {
         return static::instance('Asia/Shanghai');
     }
@@ -4311,7 +4297,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function SimferopolEurope()
+    public static function SimferopolEurope(): self
     {
         return static::instance('Europe/Simferopol');
     }
@@ -4323,7 +4309,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function SingaporeAsia()
+    public static function SingaporeAsia(): self
     {
         return static::instance('Asia/Singapore');
     }
@@ -4336,7 +4322,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function SitkaAmerica()
+    public static function SitkaAmerica(): self
     {
         return static::instance('America/Sitka');
     }
@@ -4348,7 +4334,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function SkopjeEurope()
+    public static function SkopjeEurope(): self
     {
         return static::instance('Europe/Skopje');
     }
@@ -4360,7 +4346,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function SofiaEurope()
+    public static function SofiaEurope(): self
     {
         return static::instance('Europe/Sofia');
     }
@@ -4372,7 +4358,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function SouthGeorgiaAtlantic()
+    public static function SouthGeorgiaAtlantic(): self
     {
         return static::instance('Atlantic/South_Georgia');
     }
@@ -4385,7 +4371,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function SrednekolymskAsia()
+    public static function SrednekolymskAsia(): self
     {
         return static::instance('Asia/Srednekolymsk');
     }
@@ -4397,7 +4383,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function StBarthelemyAmerica()
+    public static function StBarthelemyAmerica(): self
     {
         return static::instance('America/St_Barthelemy');
     }
@@ -4409,7 +4395,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function StHelenaAtlantic()
+    public static function StHelenaAtlantic(): self
     {
         return static::instance('Atlantic/St_Helena');
     }
@@ -4421,7 +4407,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function StJohnsAmerica()
+    public static function StJohnsAmerica(): self
     {
         return static::instance('America/St_Johns');
     }
@@ -4434,7 +4420,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function StKittsAmerica()
+    public static function StKittsAmerica(): self
     {
         return static::instance('America/St_Kitts');
     }
@@ -4446,7 +4432,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function StLuciaAmerica()
+    public static function StLuciaAmerica(): self
     {
         return static::instance('America/St_Lucia');
     }
@@ -4458,7 +4444,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function StThomasAmerica()
+    public static function StThomasAmerica(): self
     {
         return static::instance('America/St_Thomas');
     }
@@ -4470,7 +4456,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function StVincentAmerica()
+    public static function StVincentAmerica(): self
     {
         return static::instance('America/St_Vincent');
     }
@@ -4482,7 +4468,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function StanleyAtlantic()
+    public static function StanleyAtlantic(): self
     {
         return static::instance('Atlantic/Stanley');
     }
@@ -4494,7 +4480,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function StockholmEurope()
+    public static function StockholmEurope(): self
     {
         return static::instance('Europe/Stockholm');
     }
@@ -4506,7 +4492,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function SwiftCurrentAmerica()
+    public static function SwiftCurrentAmerica(): self
     {
         return static::instance('America/Swift_Current');
     }
@@ -4518,7 +4504,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function SydneyAustralia()
+    public static function SydneyAustralia(): self
     {
         return static::instance('Australia/Sydney');
     }
@@ -4531,7 +4517,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function SyowaAntarctica()
+    public static function SyowaAntarctica(): self
     {
         return static::instance('Antarctica/Syowa');
     }
@@ -4543,7 +4529,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function TahitiPacific()
+    public static function TahitiPacific(): self
     {
         return static::instance('Pacific/Tahiti');
     }
@@ -4555,7 +4541,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function TaipeiAsia()
+    public static function TaipeiAsia(): self
     {
         return static::instance('Asia/Taipei');
     }
@@ -4567,7 +4553,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function TallinnEurope()
+    public static function TallinnEurope(): self
     {
         return static::instance('Europe/Tallinn');
     }
@@ -4579,7 +4565,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function TarawaPacific()
+    public static function TarawaPacific(): self
     {
         return static::instance('Pacific/Tarawa');
     }
@@ -4591,7 +4577,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function TashkentAsia()
+    public static function TashkentAsia(): self
     {
         return static::instance('Asia/Tashkent');
     }
@@ -4603,7 +4589,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function TbilisiAsia()
+    public static function TbilisiAsia(): self
     {
         return static::instance('Asia/Tbilisi');
     }
@@ -4615,7 +4601,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function TegucigalpaAmerica()
+    public static function TegucigalpaAmerica(): self
     {
         return static::instance('America/Tegucigalpa');
     }
@@ -4627,7 +4613,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function TehranAsia()
+    public static function TehranAsia(): self
     {
         return static::instance('Asia/Tehran');
     }
@@ -4639,7 +4625,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function TellCityIndianaAmerica()
+    public static function TellCityIndianaAmerica(): self
     {
         return static::instance('America/Indiana/Tell_City');
     }
@@ -4651,7 +4637,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function ThimphuAsia()
+    public static function ThimphuAsia(): self
     {
         return static::instance('Asia/Thimphu');
     }
@@ -4663,7 +4649,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function ThuleAmerica()
+    public static function ThuleAmerica(): self
     {
         return static::instance('America/Thule');
     }
@@ -4675,7 +4661,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function ThunderBayAmerica()
+    public static function ThunderBayAmerica(): self
     {
         return static::instance('America/Thunder_Bay');
     }
@@ -4687,7 +4673,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function TijuanaAmerica()
+    public static function TijuanaAmerica(): self
     {
         return static::instance('America/Tijuana');
     }
@@ -4699,7 +4685,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function TiraneEurope()
+    public static function TiraneEurope(): self
     {
         return static::instance('Europe/Tirane');
     }
@@ -4711,7 +4697,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function TokyoAsia()
+    public static function TokyoAsia(): self
     {
         return static::instance('Asia/Tokyo');
     }
@@ -4723,7 +4709,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function TomskAsia()
+    public static function TomskAsia(): self
     {
         return static::instance('Asia/Tomsk');
     }
@@ -4736,7 +4722,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function TongatapuPacific()
+    public static function TongatapuPacific(): self
     {
         return static::instance('Pacific/Tongatapu');
     }
@@ -4748,7 +4734,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function TorontoAmerica()
+    public static function TorontoAmerica(): self
     {
         return static::instance('America/Toronto');
     }
@@ -4760,7 +4746,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function TortolaAmerica()
+    public static function TortolaAmerica(): self
     {
         return static::instance('America/Tortola');
     }
@@ -4772,7 +4758,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function TripoliAfrica()
+    public static function TripoliAfrica(): self
     {
         return static::instance('Africa/Tripoli');
     }
@@ -4784,7 +4770,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function TrollAntarctica()
+    public static function TrollAntarctica(): self
     {
         return static::instance('Antarctica/Troll');
     }
@@ -4796,7 +4782,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function TucumanArgentinaAmerica()
+    public static function TucumanArgentinaAmerica(): self
     {
         return static::instance('America/Argentina/Tucuman');
     }
@@ -4808,7 +4794,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function TunisAfrica()
+    public static function TunisAfrica(): self
     {
         return static::instance('Africa/Tunis');
     }
@@ -4820,7 +4806,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function UTC()
+    public static function UTC(): self
     {
         return static::instance();
     }
@@ -4832,7 +4818,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function UlaanbaatarAsia()
+    public static function UlaanbaatarAsia(): self
     {
         return static::instance('Asia/Ulaanbaatar');
     }
@@ -4844,7 +4830,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function UlyanovskEurope()
+    public static function UlyanovskEurope(): self
     {
         return static::instance('Europe/Ulyanovsk');
     }
@@ -4856,7 +4842,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function UrumqiAsia()
+    public static function UrumqiAsia(): self
     {
         return static::instance('Asia/Urumqi');
     }
@@ -4869,7 +4855,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function UshuaiaArgentinaAmerica()
+    public static function UshuaiaArgentinaAmerica(): self
     {
         return static::instance('America/Argentina/Ushuaia');
     }
@@ -4881,7 +4867,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function UstNeraAsia()
+    public static function UstNeraAsia(): self
     {
         return static::instance('Asia/Ust-Nera');
     }
@@ -4894,7 +4880,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function UzhgorodEurope()
+    public static function UzhgorodEurope(): self
     {
         return static::instance('Europe/Uzhgorod');
     }
@@ -4906,7 +4892,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function VaduzEurope()
+    public static function VaduzEurope(): self
     {
         return static::instance('Europe/Vaduz');
     }
@@ -4918,7 +4904,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function VancouverAmerica()
+    public static function VancouverAmerica(): self
     {
         return static::instance('America/Vancouver');
     }
@@ -4930,7 +4916,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function VaticanEurope()
+    public static function VaticanEurope(): self
     {
         return static::instance('Europe/Vatican');
     }
@@ -4942,7 +4928,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function VevayIndianaAmerica()
+    public static function VevayIndianaAmerica(): self
     {
         return static::instance('America/Indiana/Vevay');
     }
@@ -4954,7 +4940,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function ViennaEurope()
+    public static function ViennaEurope(): self
     {
         return static::instance('Europe/Vienna');
     }
@@ -4966,7 +4952,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function VientianeAsia()
+    public static function VientianeAsia(): self
     {
         return static::instance('Asia/Vientiane');
     }
@@ -4978,7 +4964,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function VilniusEurope()
+    public static function VilniusEurope(): self
     {
         return static::instance('Europe/Vilnius');
     }
@@ -4991,7 +4977,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function VincennesIndianaAmerica()
+    public static function VincennesIndianaAmerica(): self
     {
         return static::instance('America/Indiana/Vincennes');
     }
@@ -5003,7 +4989,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function VladivostokAsia()
+    public static function VladivostokAsia(): self
     {
         return static::instance('Asia/Vladivostok');
     }
@@ -5015,7 +5001,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function VolgogradEurope()
+    public static function VolgogradEurope(): self
     {
         return static::instance('Europe/Volgograd');
     }
@@ -5028,7 +5014,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function VostokAntarctica()
+    public static function VostokAntarctica(): self
     {
         return static::instance('Antarctica/Vostok');
     }
@@ -5040,7 +5026,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function WakePacific()
+    public static function WakePacific(): self
     {
         return static::instance('Pacific/Wake');
     }
@@ -5052,7 +5038,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function WallisPacific()
+    public static function WallisPacific(): self
     {
         return static::instance('Pacific/Wallis');
     }
@@ -5064,7 +5050,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function WarsawEurope()
+    public static function WarsawEurope(): self
     {
         return static::instance('Europe/Warsaw');
     }
@@ -5076,7 +5062,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function WhitehorseAmerica()
+    public static function WhitehorseAmerica(): self
     {
         return static::instance('America/Whitehorse');
     }
@@ -5089,7 +5075,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function WinamacIndianaAmerica()
+    public static function WinamacIndianaAmerica(): self
     {
         return static::instance('America/Indiana/Winamac');
     }
@@ -5101,7 +5087,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function WindhoekAfrica()
+    public static function WindhoekAfrica(): self
     {
         return static::instance('Africa/Windhoek');
     }
@@ -5113,7 +5099,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function WinnipegAmerica()
+    public static function WinnipegAmerica(): self
     {
         return static::instance('America/Winnipeg');
     }
@@ -5126,7 +5112,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnused
      * @noinspection SpellCheckingInspection
      */
-    public static function YakutatAmerica()
+    public static function YakutatAmerica(): self
     {
         return static::instance('America/Yakutat');
     }
@@ -5138,7 +5124,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function YakutskAsia()
+    public static function YakutskAsia(): self
     {
         return static::instance('Asia/Yakutsk');
     }
@@ -5150,7 +5136,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function YangonAsia()
+    public static function YangonAsia(): self
     {
         return static::instance('Asia/Yangon');
     }
@@ -5162,7 +5148,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function YekaterinburgAsia()
+    public static function YekaterinburgAsia(): self
     {
         return static::instance('Asia/Yekaterinburg');
     }
@@ -5174,7 +5160,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function YellowknifeAmerica()
+    public static function YellowknifeAmerica(): self
     {
         return static::instance('America/Yellowknife');
     }
@@ -5186,7 +5172,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function YerevanAsia()
+    public static function YerevanAsia(): self
     {
         return static::instance('Asia/Yerevan');
     }
@@ -5198,7 +5184,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function ZagrebEurope()
+    public static function ZagrebEurope(): self
     {
         return static::instance('Europe/Zagreb');
     }
@@ -5210,7 +5196,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function ZaporozhyeEurope()
+    public static function ZaporozhyeEurope(): self
     {
         return static::instance('Europe/Zaporozhye');
     }
@@ -5222,7 +5208,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @noinspection PhpUnused
      */
-    public static function ZurichEurope()
+    public static function ZurichEurope(): self
     {
         return static::instance('Europe/Zurich');
     }
@@ -5232,16 +5218,30 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @param NativeDateTimeZone $timezone
      *
-     * @return self
+     * @return static
      *
      * @noinspection PhpUnused
      */
-    public static function createFromInstance(NativeDateTimeZone $timezone)
+    public static function createFromInstance(NativeDateTimeZone $timezone): self
     {
         if ($timezone instanceof DateTimeZone) {
             return $timezone->cloned();
         }
         return static::instance($timezone->getName());
+    }
+
+    /**
+     * Create an instance of this timezone class
+     *
+     * @param string $timezone
+     *
+     * @return static
+     *
+     * @noinspection PhpUnused
+     */
+    public static function instance(string $timezone = 'UTC'): self
+    {
+        return new static($timezone);
     }
 
     /**
@@ -5257,11 +5257,11 @@ class DateTimeZone extends NativeDateTimeZone
     /**
      * Get a cloned copy of this timezone instance
      *
-     * @return self
+     * @return static
      *
      * @noinspection PhpUnused
      */
-    public function cloned()
+    public function cloned(): self
     {
         return clone $this;
     }
@@ -5276,7 +5276,7 @@ class DateTimeZone extends NativeDateTimeZone
      * @noinspection PhpUnhandledExceptionInspection
      * @noinspection PhpDocMissingThrowsInspection
      */
-    public function equal(NativeDateTimeZone $timezone)
+    public function equal(NativeDateTimeZone $timezone): bool
     {
         $now = new NativeDateTime('now', new NativeDateTimeZone('UTC'));
         return $this->getOffset($now) === $timezone->getOffset($now);
@@ -5287,7 +5287,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @return string
      */
-    public function getCountryCode()
+    public function getCountryCode(): string
     {
         return $this->getLocation()['country_code'];
     }
@@ -5297,7 +5297,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @return float
      */
-    public function getLatitude()
+    public function getLatitude(): float
     {
         return $this->getLocation()['latitude'];
     }
@@ -5307,7 +5307,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @return float
      */
-    public function getLongitude()
+    public function getLongitude(): float
     {
         return $this->getLocation()['longitude'];
     }
@@ -5315,21 +5315,21 @@ class DateTimeZone extends NativeDateTimeZone
     /**
      * Returns all transitions for the timezone
      *
-     * @param NativeDateTime|int $from
-     * @param NativeDateTime|int $to
+     * @param NativeDateTime|int $timestampBegin
+     * @param NativeDateTime|int $timestampEnd
      *
      * @return Transition[]
      *
      * @link https://php.net/manual/en/datetimezone.gettransitions.php
      */
-    public function getTransitions($from = null, $to = null)
+    public function getTransitions($timestampBegin = null, $timestampEnd = null): array
     {
-        if ($from === null || $to === null) {
+        if ($timestampBegin === null || $timestampEnd === null) {
             $transitions = parent::getTransitions();
         } else {
-            $from = $from instanceof NativeDateTime ? $from->getTimestamp() : (int) $from;
-            $to = $to instanceof NativeDateTime ? $to->getTimestamp() : (int) $to;
-            $transitions = parent::getTransitions($from, $to);
+            $timestampBegin = $timestampBegin instanceof NativeDateTime ? $timestampBegin->getTimestamp() : (int) $timestampBegin;
+            $timestampEnd = $timestampEnd instanceof NativeDateTime ? $timestampEnd->getTimestamp() : (int) $timestampEnd;
+            $transitions = parent::getTransitions($timestampBegin, $timestampEnd);
         }
         return array_map(function ($transitionData) {
             return Transition::createFromArray($transitionData);
@@ -5343,7 +5343,7 @@ class DateTimeZone extends NativeDateTimeZone
      *
      * @return bool
      */
-    public function same(NativeDateTimeZone $timezone)
+    public function same(NativeDateTimeZone $timezone): bool
     {
         return $this->getName() === $timezone->getName();
     }

@@ -34,7 +34,7 @@ class DateTime extends \DateTime
      * @noinspection PhpDocMissingThrowsInspection
      * @noinspection PhpUnhandledExceptionInspection
      */
-    public static function createFromInstance(DateTimeInterface $datetime)
+    public static function createFromInstance(DateTimeInterface $datetime): self
     {
         return new static($datetime->format('Y-m-d H:i:s.u'), $datetime->getTimezone());
     }
@@ -45,12 +45,12 @@ class DateTime extends \DateTime
      * @param int|float|string $timestamp
      * @param DateTimeZone|null $timezone
      *
-     * @return self
+     * @return static
      *
      * @noinspection PhpUnhandledExceptionInspection
      * @noinspection PhpDocMissingThrowsInspection
      */
-    public static function createFromTimestamp($timestamp, DateTimeZone $timezone = null)
+    public static function createFromTimestamp($timestamp, DateTimeZone $timezone = null): self
     {
         $timezone = $timezone ?: DateTimeZone::UTC();
 
@@ -77,12 +77,12 @@ class DateTime extends \DateTime
      *
      * @throws Exception Emits Exception in case of an error.
      *
-     * @return self
+     * @return static
      *
      * @see DateTime::__construct
      * @link https://php.net/manual/en/datetime.construct.php
      */
-    public static function instance($time = 'now', DateTimeZone $timezone = null)
+    public static function instance(string $time = 'now', DateTimeZone $timezone = null): self
     {
         return new static($time, $timezone);
     }
@@ -92,7 +92,7 @@ class DateTime extends \DateTime
      *
      * @return static
      */
-    public static function now()
+    public static function now(): self
     {
         return new static();
     }
@@ -102,7 +102,7 @@ class DateTime extends \DateTime
      *
      * @return static
      */
-    public static function today()
+    public static function today(): self
     {
         return static::now()->startOfDay();
     }
@@ -112,7 +112,7 @@ class DateTime extends \DateTime
      *
      * @return static
      */
-    public static function tomorrow()
+    public static function tomorrow(): self
     {
         return static::today()->add(DateInterval::day());
     }
@@ -122,7 +122,7 @@ class DateTime extends \DateTime
      *
      * @return static
      */
-    public static function yesterday()
+    public static function yesterday(): self
     {
         return static::today()->sub(DateInterval::day());
     }
@@ -140,9 +140,9 @@ class DateTime extends \DateTime
     /**
      * Add a day to the date
      *
-     * @return DateTime
+     * @return static
      */
-    public function addDay()
+    public function addDay(): self
     {
         return $this->addDays(1);
     }
@@ -152,9 +152,9 @@ class DateTime extends \DateTime
      *
      * @param int $days
      *
-     * @return DateTime
+     * @return static
      */
-    public function addDays($days)
+    public function addDays(int $days): self
     {
         return $this->add(DateInterval::days($days));
     }
@@ -162,9 +162,9 @@ class DateTime extends \DateTime
     /**
      * Add an hour to the date
      *
-     * @return DateTime
+     * @return static
      */
-    public function addHour()
+    public function addHour(): self
     {
         return $this->addHours(1);
     }
@@ -174,9 +174,9 @@ class DateTime extends \DateTime
      *
      * @param int $hours
      *
-     * @return DateTime
+     * @return static
      */
-    public function addHours($hours)
+    public function addHours(int $hours): self
     {
         return $this->add(DateInterval::hours($hours));
     }
@@ -184,9 +184,9 @@ class DateTime extends \DateTime
     /**
      * Add a minute to the date
      *
-     * @return DateTime
+     * @return static
      */
-    public function addMinute()
+    public function addMinute(): self
     {
         return $this->addMinutes(1);
     }
@@ -196,9 +196,9 @@ class DateTime extends \DateTime
      *
      * @param int $minutes
      *
-     * @return DateTime
+     * @return static
      */
-    public function addMinutes($minutes)
+    public function addMinutes(int $minutes): self
     {
         return $this->add(DateInterval::minutes($minutes));
     }
@@ -206,9 +206,9 @@ class DateTime extends \DateTime
     /**
      * Add a month to the date
      *
-     * @return DateTime
+     * @return static
      */
-    public function addMonth()
+    public function addMonth(): self
     {
         return $this->addMonths(1);
     }
@@ -218,9 +218,9 @@ class DateTime extends \DateTime
      *
      * @param int $months
      *
-     * @return DateTime
+     * @return static
      */
-    public function addMonths($months)
+    public function addMonths(int $months): self
     {
         return $this->add(DateInterval::months($months));
     }
@@ -228,9 +228,9 @@ class DateTime extends \DateTime
     /**
      * Add a second to the date
      *
-     * @return DateTime
+     * @return static
      */
-    public function addSecond()
+    public function addSecond(): self
     {
         return $this->addSeconds(1);
     }
@@ -240,9 +240,9 @@ class DateTime extends \DateTime
      *
      * @param int $seconds
      *
-     * @return DateTime
+     * @return static
      */
-    public function addSeconds($seconds)
+    public function addSeconds(int $seconds): self
     {
         return $this->add(DateInterval::seconds($seconds));
     }
@@ -250,9 +250,9 @@ class DateTime extends \DateTime
     /**
      * Add a year to the date
      *
-     * @return DateTime
+     * @return static
      */
-    public function addYear()
+    public function addYear(): self
     {
         return $this->addYears(1);
     }
@@ -262,9 +262,9 @@ class DateTime extends \DateTime
      *
      * @param int $years
      *
-     * @return DateTime
+     * @return static
      */
-    public function addYears($years)
+    public function addYears(int $years): self
     {
         return $this->add(DateInterval::years($years));
     }
@@ -272,9 +272,9 @@ class DateTime extends \DateTime
     /**
      * Set the time to the end of the day
      *
-     * @return self
+     * @return static
      */
-    public function endOfDay()
+    public function endOfDay(): self
     {
         return $this->setTime(23, 59, 59);
     }
@@ -282,9 +282,9 @@ class DateTime extends \DateTime
     /**
      * Set the date to the end of the calendar month it is currently in
      *
-     * @return self
+     * @return static
      */
-    public function endOfMonth()
+    public function endOfMonth(): self
     {
         return $this->setDay($this->getDaysInMonth());
     }
@@ -294,7 +294,7 @@ class DateTime extends \DateTime
      *
      * @return string
      */
-    public function getDayName()
+    public function getDayName(): string
     {
         return $this->format('l');
     }
@@ -304,7 +304,7 @@ class DateTime extends \DateTime
      *
      * @return int
      */
-    public function getDayOfMonth()
+    public function getDayOfMonth(): int
     {
         return (int) $this->format('j');
     }
@@ -314,7 +314,7 @@ class DateTime extends \DateTime
      *
      * @return int
      */
-    public function getDayOfWeek()
+    public function getDayOfWeek(): int
     {
         return (int) $this->format('N');
     }
@@ -324,7 +324,7 @@ class DateTime extends \DateTime
      *
      * @return int
      */
-    public function getDayOfYear()
+    public function getDayOfYear(): int
     {
         return (int) $this->format('z');
     }
@@ -334,7 +334,7 @@ class DateTime extends \DateTime
      *
      * @return string
      */
-    public function getDayShortName()
+    public function getDayShortName(): string
     {
         return $this->format('D');
     }
@@ -344,7 +344,7 @@ class DateTime extends \DateTime
      *
      * @return int
      */
-    public function getDaysInMonth()
+    public function getDaysInMonth(): int
     {
         return (int) $this->format('t');
     }
@@ -354,7 +354,7 @@ class DateTime extends \DateTime
      *
      * @return int
      */
-    public function getDaysLeftInMonth()
+    public function getDaysLeftInMonth(): int
     {
         return $this->getDaysInMonth() - $this->getDayOfMonth();
     }
@@ -364,7 +364,7 @@ class DateTime extends \DateTime
      *
      * @return int
      */
-    public function getMonth()
+    public function getMonth(): int
     {
         return (int) $this->format('m');
     }
@@ -374,7 +374,7 @@ class DateTime extends \DateTime
      *
      * @return string
      */
-    public function getMonthName()
+    public function getMonthName(): string
     {
         return $this->format('F');
     }
@@ -384,7 +384,7 @@ class DateTime extends \DateTime
      *
      * @return string
      */
-    public function getMonthShortName()
+    public function getMonthShortName(): string
     {
         return $this->format('M');
     }
@@ -396,7 +396,7 @@ class DateTime extends \DateTime
      *
      * @link http://php.net/manual/en/datetime.gettimezone.php
      */
-    public function getTimezone()
+    public function getTimezone(): DateTimeZone
     {
         return DateTimeZone::createFromInstance(parent::getTimezone());
     }
@@ -406,7 +406,7 @@ class DateTime extends \DateTime
      *
      * @return int
      */
-    public function getYear()
+    public function getYear(): int
     {
         return (int) $this->format('Y');
     }
@@ -416,9 +416,9 @@ class DateTime extends \DateTime
      *
      * @return bool
      */
-    public function isWeekday()
+    public function isWeekday(): bool
     {
-        return $this->isWeekend() === false;
+        return !$this->isWeekend();
     }
 
     /**
@@ -426,7 +426,7 @@ class DateTime extends \DateTime
      *
      * @return bool
      */
-    public function isWeekend()
+    public function isWeekend(): bool
     {
         return $this->getDayName() === 'Saturday' || $this->getDayName() === 'Sunday';
     }
@@ -436,9 +436,9 @@ class DateTime extends \DateTime
      *
      * @param int $day
      *
-     * @return self
+     * @return static
      */
-    public function setDay($day)
+    public function setDay(int $day): self
     {
         return $this->setDate($this->getYear(), $this->getMonth(), $day);
     }
@@ -453,7 +453,7 @@ class DateTime extends \DateTime
      *
      * @see Date::createFromFormat()
      */
-    public function setFromFormat($format, $time)
+    public function setFromFormat(string $format, string $time): self
     {
         $this->setTimestamp(
             DateTime::createFromFormat($format, $time, $this->getTimezone())->getTimestamp()
@@ -466,9 +466,9 @@ class DateTime extends \DateTime
      *
      * @param int $month
      *
-     * @return self
+     * @return static
      */
-    public function setMonth($month)
+    public function setMonth(int $month): self
     {
         return $this->setDate($this->getYear(), $month, $this->getDayOfMonth());
     }
@@ -483,7 +483,7 @@ class DateTime extends \DateTime
      *
      * @link https://php.net/manual/en/datetime.settimezone.php
      */
-    public function setTimezone($timezone, $freezeDatetime = false)
+    public function setTimezone($timezone, bool $freezeDatetime = false): self
     {
         if ($freezeDatetime) {
             $this->subSeconds($timezone->getOffset($this) - $this->getTimezone()->getOffset($this));
@@ -497,9 +497,9 @@ class DateTime extends \DateTime
      *
      * @param int $year
      *
-     * @return self
+     * @return static
      */
-    public function setYear($year)
+    public function setYear(int $year): self
     {
         return $this->setDate($year, $this->getMonth(), $this->getDayOfMonth());
     }
@@ -507,9 +507,9 @@ class DateTime extends \DateTime
     /**
      * Set the time to the start of the day
      *
-     * @return self
+     * @return static
      */
-    public function startOfDay()
+    public function startOfDay(): self
     {
         return $this->setTime(00, 00, 00);
     }
@@ -517,9 +517,9 @@ class DateTime extends \DateTime
     /**
      * Set the date to the start of the calendar month it is currently in
      *
-     * @return self
+     * @return static
      */
-    public function startOfMonth()
+    public function startOfMonth(): self
     {
         return $this->setDate($this->getYear(), $this->getMonth(), 1);
     }
@@ -527,9 +527,9 @@ class DateTime extends \DateTime
     /**
      * Subtract a day from the date
      *
-     * @return DateTime
+     * @return static
      */
-    public function subDay()
+    public function subDay(): self
     {
         return $this->subDays(1);
     }
@@ -539,9 +539,9 @@ class DateTime extends \DateTime
      *
      * @param int $days
      *
-     * @return DateTime
+     * @return static
      */
-    public function subDays($days)
+    public function subDays(int $days): self
     {
         return $this->sub(DateInterval::days($days));
     }
@@ -549,9 +549,9 @@ class DateTime extends \DateTime
     /**
      * Subtract an hour from the date
      *
-     * @return DateTime
+     * @return static
      */
-    public function subHour()
+    public function subHour(): self
     {
         return $this->subHours(1);
     }
@@ -561,9 +561,9 @@ class DateTime extends \DateTime
      *
      * @param int $hours
      *
-     * @return DateTime
+     * @return static
      */
-    public function subHours($hours)
+    public function subHours(int $hours): self
     {
         return $this->sub(DateInterval::hours($hours));
     }
@@ -571,9 +571,9 @@ class DateTime extends \DateTime
     /**
      * Subtract a minute from the date
      *
-     * @return DateTime
+     * @return static
      */
-    public function subMinute()
+    public function subMinute(): self
     {
         return $this->subMinutes(1);
     }
@@ -583,9 +583,9 @@ class DateTime extends \DateTime
      *
      * @param int $minutes
      *
-     * @return DateTime
+     * @return static
      */
-    public function subMinutes($minutes)
+    public function subMinutes(int $minutes): self
     {
         return $this->sub(DateInterval::minutes($minutes));
     }
@@ -593,9 +593,9 @@ class DateTime extends \DateTime
     /**
      * Subtract a month from the date
      *
-     * @return DateTime
+     * @return static
      */
-    public function subMonth()
+    public function subMonth(): self
     {
         return $this->subMonths(1);
     }
@@ -605,9 +605,9 @@ class DateTime extends \DateTime
      *
      * @param int $months
      *
-     * @return DateTime
+     * @return static
      */
-    public function subMonths($months)
+    public function subMonths(int $months): self
     {
         return $this->sub(DateInterval::months($months));
     }
@@ -615,9 +615,9 @@ class DateTime extends \DateTime
     /**
      * Subtract a second from the date
      *
-     * @return DateTime
+     * @return static
      */
-    public function subSecond()
+    public function subSecond(): self
     {
         return $this->subSeconds(1);
     }
@@ -627,9 +627,9 @@ class DateTime extends \DateTime
      *
      * @param int $seconds
      *
-     * @return DateTime
+     * @return static
      */
-    public function subSeconds($seconds)
+    public function subSeconds(int $seconds): self
     {
         return $this->sub(DateInterval::seconds($seconds));
     }
@@ -637,9 +637,9 @@ class DateTime extends \DateTime
     /**
      * Subtract a year from the date
      *
-     * @return DateTime
+     * @return static
      */
-    public function subYear()
+    public function subYear(): self
     {
         return $this->subYears(1);
     }
@@ -649,9 +649,9 @@ class DateTime extends \DateTime
      *
      * @param int $years
      *
-     * @return DateTime
+     * @return static
      */
-    public function subYears($years)
+    public function subYears(int $years): self
     {
         return $this->sub(DateInterval::years($years));
     }
@@ -661,8 +661,8 @@ class DateTime extends \DateTime
      *
      * @return string
      */
-    public function toString()
+    public function toString(): string
     {
-        return $this->format(\DateTime::ATOM);
+        return $this->format(DateTimeInterface::ATOM);
     }
 }

@@ -15,7 +15,7 @@ class DatePeriod extends NativeDatePeriod
      *
      * @return static
      */
-    public static function createFromInstance(NativeDatePeriod $period)
+    public static function createFromInstance(NativeDatePeriod $period): self
     {
         return static::instance($period->getStartDate(), $period->getDateInterval(), $period->getEndDate() ?: $period->getStartDate());
     }
@@ -32,7 +32,7 @@ class DatePeriod extends NativeDatePeriod
      *
      * @return static
      */
-    public static function instance(DateTimeInterface $start, NativeDateInterval $interval, DateTimeInterface $end, $options = 0)
+    public static function instance(DateTimeInterface $start, NativeDateInterval $interval, DateTimeInterface $end, int $options = 0): self
     {
         return new static($start, $interval, $end, $options);
     }
@@ -50,9 +50,9 @@ class DatePeriod extends NativeDatePeriod
     /**
      * Return a cloned instance of this period
      *
-     * @return self
+     * @return static
      */
-    public function cloned()
+    public function cloned(): self
     {
         return static::createFromInstance($this);
     }
@@ -64,7 +64,7 @@ class DatePeriod extends NativeDatePeriod
      *
      * @link https://php.net/manual/en/dateperiod.getdateinterval.php
      */
-    public function getDateInterval()
+    public function getDateInterval(): DateInterval
     {
         return DateInterval::createFromInstance(parent::getDateInterval());
     }
@@ -74,7 +74,7 @@ class DatePeriod extends NativeDatePeriod
      *
      * @return DateTime
      */
-    public function getEndDatetime()
+    public function getEndDatetime(): DateTime
     {
         return DateTime::createFromInstance($this->getEndDate() ?: $this->getStartDate());
     }
@@ -84,7 +84,7 @@ class DatePeriod extends NativeDatePeriod
      *
      * @return DateTime
      */
-    public function getStartDatetime()
+    public function getStartDatetime(): DateTime
     {
         return DateTime::createFromInstance($this->getStartDate());
     }
@@ -94,7 +94,7 @@ class DatePeriod extends NativeDatePeriod
      *
      * @return string
      */
-    public function toString()
+    public function toString(): string
     {
         return "every {$this->getDateInterval()->optimised()}, from {$this->getStartDatetime()} (included) to {$this->getEndDatetime()}";
     }

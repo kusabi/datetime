@@ -13,7 +13,7 @@ class IntervalSpecFactory
      *
      * @return string
      */
-    public function createFromInterval(NativeDateInterval $interval)
+    public function createFromInterval(NativeDateInterval $interval): string
     {
         // Start the spec
         $spec = 'P';
@@ -41,7 +41,7 @@ class IntervalSpecFactory
             }
         }
 
-        // If no dates or times, return a 0 second spec
+        // If no dates or times, return a 0-second spec
         return $spec === 'P' ? DateInterval::SPEC_EMPTY : $spec;
     }
 
@@ -58,7 +58,7 @@ class IntervalSpecFactory
      *
      * @return string
      */
-    public function createFromValues($years = null, $months = null, $weeks = null, $days = null, $hours = null, $minutes = null, $seconds = null)
+    public function createFromValues(int $years = null, int $months = null, int $weeks = null, int $days = null, int $hours = null, int $minutes = null, int $seconds = null): string
     {
         $spec = 'P';
 

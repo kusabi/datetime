@@ -72,7 +72,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return DateInterval
      */
-    public static function createFromInstance(NativeDateInterval $interval)
+    public static function createFromInstance(NativeDateInterval $interval): DateInterval
     {
         if ($interval instanceof DateInterval) {
             return $interval->cloned();
@@ -96,7 +96,7 @@ class DateInterval extends NativeDateInterval
      * @noinspection PhpDocMissingThrowsInspection
      * @noinspection PhpUnhandledExceptionInspection
      */
-    public static function createFromValues($years = null, $months = null, $weeks = null, $days = null, $hours = null, $minutes = null, $seconds = null)
+    public static function createFromValues(int $years = null, int $months = null, int $weeks = null, int $days = null, int $hours = null, int $minutes = null, int $seconds = null): DateInterval
     {
         $factory = new IntervalSpecFactory();
         return new static($factory->createFromValues($years, $months, $weeks, $days, $hours, $minutes, $seconds));
@@ -109,19 +109,19 @@ class DateInterval extends NativeDateInterval
      *
      * @see DateInterval::days()
      */
-    public static function day()
+    public static function day(): DateInterval
     {
         return static::days(1);
     }
 
     /**
-     * Shorthand for creating an daily interval
+     * Shorthand for creating a daily interval
      *
      * @param int $days
      *
      * @return static
      */
-    public static function days($days)
+    public static function days(int $days): DateInterval
     {
         return static::createFromValues(null, null, null, $days);
     }
@@ -133,7 +133,7 @@ class DateInterval extends NativeDateInterval
      *
      * @see DateInterval::hours()
      */
-    public static function hour()
+    public static function hour(): DateInterval
     {
         return static::hours(1);
     }
@@ -145,7 +145,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return static
      */
-    public static function hours($hours)
+    public static function hours($hours): DateInterval
     {
         return static::createFromValues(null, null, null, null, $hours);
     }
@@ -159,11 +159,11 @@ class DateInterval extends NativeDateInterval
      *
      * @throws Exception when the interval_spec cannot be parsed as an interval.
      *
-     * @return self|null
+     * @return self
      *
      * @link https://php.net/manual/en/dateinterval.construct.php
      */
-    public static function instance($spec = self::SPEC_EMPTY)
+    public static function instance(string $spec = self::SPEC_EMPTY): DateInterval
     {
         return new static($spec);
     }
@@ -175,7 +175,7 @@ class DateInterval extends NativeDateInterval
      *
      * @see DateInterval::minutes()
      */
-    public static function minute()
+    public static function minute(): DateInterval
     {
         return static::minutes(1);
     }
@@ -187,7 +187,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return static
      */
-    public static function minutes($minutes)
+    public static function minutes(int $minutes): DateInterval
     {
         return static::createFromValues(null, null, null, null, null, $minutes);
     }
@@ -199,19 +199,19 @@ class DateInterval extends NativeDateInterval
      *
      * @see DateInterval::months()
      */
-    public static function month()
+    public static function month(): DateInterval
     {
         return static::months(1);
     }
 
     /**
-     * Shorthand for creating an monthly interval
+     * Shorthand for creating a monthly interval
      *
      * @param int $months
      *
      * @return static
      */
-    public static function months($months)
+    public static function months(int $months): DateInterval
     {
         return static::createFromValues(null, $months);
     }
@@ -223,7 +223,7 @@ class DateInterval extends NativeDateInterval
      *
      * @see DateInterval::seconds()
      */
-    public static function second()
+    public static function second(): DateInterval
     {
         return static::seconds(1);
     }
@@ -235,53 +235,53 @@ class DateInterval extends NativeDateInterval
      *
      * @return static
      */
-    public static function seconds($second)
+    public static function seconds(int $second): DateInterval
     {
         return static::createFromValues(null, null, null, null, null, null, $second);
     }
 
     /**
-     * Shorthand for creating an week interval
+     * Shorthand for creating a week interval
      *
      * @return static
      *
      * @see DateInterval::weeks()
      */
-    public static function week()
+    public static function week(): DateInterval
     {
         return static::weeks(1);
     }
 
     /**
-     * Shorthand for creating an weekly interval
+     * Shorthand for creating a weekly interval
      *
      * @param int $weeks
      *
      * @return static
      */
-    public static function weeks($weeks)
+    public static function weeks(int $weeks): DateInterval
     {
         return static::createFromValues(null, null, $weeks);
     }
 
     /**
-     * Shorthand for creating an year interval
+     * Shorthand for creating a year interval
      *
      * @return static
      */
-    public static function year()
+    public static function year(): DateInterval
     {
         return static::years(1);
     }
 
     /**
-     * Shorthand for creating an yearly interval
+     * Shorthand for creating a yearly interval
      *
      * @param int $years
      *
      * @return static
      */
-    public static function years($years)
+    public static function years(int $years): DateInterval
     {
         return static::createFromValues($years);
     }
@@ -301,7 +301,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return self
      */
-    public function addDay()
+    public function addDay(): DateInterval
     {
         return $this->addDays(1);
     }
@@ -313,7 +313,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return self
      */
-    public function addDays($days)
+    public function addDays(int $days): DateInterval
     {
         $this->d += $this->isInverted() ? -$days : $days;
         return $this->optimise();
@@ -324,7 +324,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return self
      */
-    public function addHour()
+    public function addHour(): DateInterval
     {
         return $this->addHours(1);
     }
@@ -336,7 +336,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return self
      */
-    public function addHours($hours)
+    public function addHours(int $hours): DateInterval
     {
         $this->h += $this->isInverted() ? -$hours : $hours;
         return $this->optimise();
@@ -349,7 +349,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return self
      */
-    public function addInterval(NativeDateInterval $interval)
+    public function addInterval(NativeDateInterval $interval): DateInterval
     {
         $this->addYears($interval->invert ? -$interval->y : $interval->y);
         $this->addMonths($interval->invert ? -$interval->m : $interval->m);
@@ -365,7 +365,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return self
      */
-    public function addMinute()
+    public function addMinute(): DateInterval
     {
         return $this->addMinutes(1);
     }
@@ -377,7 +377,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return self
      */
-    public function addMinutes($minutes)
+    public function addMinutes(int $minutes): DateInterval
     {
         $this->i += $this->isInverted() ? -$minutes : $minutes;
         return $this->optimise();
@@ -388,7 +388,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return self
      */
-    public function addMonth()
+    public function addMonth(): DateInterval
     {
         return $this->addMonths(1);
     }
@@ -400,7 +400,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return self
      */
-    public function addMonths($months)
+    public function addMonths(int $months): DateInterval
     {
         $this->m += $this->isInverted() ? -$months : $months;
         return $this->optimise();
@@ -411,7 +411,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return self
      */
-    public function addSecond()
+    public function addSecond(): DateInterval
     {
         return $this->addSeconds(1);
     }
@@ -423,7 +423,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return self
      */
-    public function addSeconds($seconds)
+    public function addSeconds(int $seconds): DateInterval
     {
         $this->s += $this->isInverted() ? -$seconds : $seconds;
         return $this->optimise();
@@ -434,7 +434,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return self
      */
-    public function addYear()
+    public function addYear(): DateInterval
     {
         return $this->addYears(1);
     }
@@ -446,7 +446,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return self
      */
-    public function addYears($years)
+    public function addYears(int $years): DateInterval
     {
         $this->y += $this->isInverted() ? -$years : $years;
         return $this->optimise();
@@ -460,7 +460,7 @@ class DateInterval extends NativeDateInterval
      * @noinspection PhpUnhandledExceptionInspection
      * @noinspection PhpDocMissingThrowsInspection
      */
-    public function cloned()
+    public function cloned(): DateInterval
     {
         return static::instance()->copy($this);
     }
@@ -472,7 +472,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return self
      */
-    public function copy(NativeDateInterval $date)
+    public function copy(NativeDateInterval $date): DateInterval
     {
         $this->y = $date->y;
         $this->m = $date->m;
@@ -489,7 +489,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return int
      */
-    public function getDays()
+    public function getDays(): int
     {
         $real = $this->getRealDays();
         return (int) ($real >= 0 ? floor($real) : ceil($real));
@@ -500,7 +500,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return int
      */
-    public function getHours()
+    public function getHours(): int
     {
         $real = $this->getRealHours();
         return (int) ($real >= 0 ? floor($real) : ceil($real));
@@ -511,7 +511,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return int
      */
-    public function getMinutes()
+    public function getMinutes(): int
     {
         $real = $this->getRealMinutes();
         return (int) ($real >= 0 ? floor($real) : ceil($real));
@@ -522,7 +522,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return int
      */
-    public function getMonths()
+    public function getMonths(): int
     {
         $real = $this->getRealMonths();
         return (int) ($real >= 0 ? floor($real) : ceil($real));
@@ -533,7 +533,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return float
      */
-    public function getRealDays()
+    public function getRealDays(): float
     {
         return (float) ($this->getRealHours() / self::HOURS_IN_DAY);
     }
@@ -543,7 +543,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return float
      */
-    public function getRealHours()
+    public function getRealHours(): float
     {
         return (float) ($this->getRealMinutes() / self::MINUTES_IN_HOUR);
     }
@@ -553,7 +553,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return float
      */
-    public function getRealMinutes()
+    public function getRealMinutes(): float
     {
         return (float) ($this->getSeconds() / self::SECONDS_IN_MINUTE);
     }
@@ -563,7 +563,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return float
      */
-    public function getRealMonths()
+    public function getRealMonths(): float
     {
         return (float) ($this->getRealDays() / self::DAYS_IN_MONTH);
     }
@@ -573,7 +573,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return float
      */
-    public function getRealYears()
+    public function getRealYears(): float
     {
         return (float) ($this->getRealMonths() / self::MONTHS_IN_YEAR);
     }
@@ -599,7 +599,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return string
      */
-    public function getSpec()
+    public function getSpec(): string
     {
         $factory = new IntervalSpecFactory();
         return $factory->createFromInterval($this);
@@ -610,7 +610,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return int
      */
-    public function getYears()
+    public function getYears(): int
     {
         $real = $this->getRealYears();
         return (int) ($real >= 0 ? floor($real) : ceil($real));
@@ -621,7 +621,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return self
      */
-    public function invert()
+    public function invert(): DateInterval
     {
         return $this->setInverted(!$this->isInverted());
     }
@@ -631,7 +631,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return bool
      */
-    public function isInverted()
+    public function isInverted(): bool
     {
         return (bool) $this->invert;
     }
@@ -641,7 +641,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return self
      */
-    public function optimise()
+    public function optimise(): DateInterval
     {
         $seconds = $this->getSeconds();
         $this->setInverted($seconds < 0);
@@ -695,7 +695,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return self
      */
-    public function optimised()
+    public function optimised(): DateInterval
     {
         return $this->cloned()->optimise();
     }
@@ -707,7 +707,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return self
      */
-    public function setInverted($inverted = true)
+    public function setInverted(bool $inverted = true): DateInterval
     {
         $this->invert = (int) $inverted;
         return $this;
@@ -718,7 +718,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return self
      */
-    public function subDay()
+    public function subDay(): DateInterval
     {
         return $this->subDays(1);
     }
@@ -730,7 +730,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return self
      */
-    public function subDays($days)
+    public function subDays(int $days): DateInterval
     {
         return $this->addDays(-$days);
     }
@@ -740,7 +740,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return self
      */
-    public function subHour()
+    public function subHour(): DateInterval
     {
         return $this->subHours(1);
     }
@@ -752,7 +752,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return self
      */
-    public function subHours($hours)
+    public function subHours(int $hours): DateInterval
     {
         return $this->addHours(-$hours);
     }
@@ -764,7 +764,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return self
      */
-    public function subInterval(NativeDateInterval $interval)
+    public function subInterval(NativeDateInterval $interval): DateInterval
     {
         return $this->addInterval(static::createFromInstance($interval)->invert());
     }
@@ -774,7 +774,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return self
      */
-    public function subMinute()
+    public function subMinute(): DateInterval
     {
         return $this->subMinutes(1);
     }
@@ -786,7 +786,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return self
      */
-    public function subMinutes($minutes)
+    public function subMinutes(int $minutes): DateInterval
     {
         return $this->addMinutes(-$minutes);
     }
@@ -796,7 +796,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return self
      */
-    public function subMonth()
+    public function subMonth(): DateInterval
     {
         return $this->subMonths(1);
     }
@@ -808,7 +808,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return self
      */
-    public function subMonths($months)
+    public function subMonths(int $months): DateInterval
     {
         return $this->addMonths(-$months);
     }
@@ -818,7 +818,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return self
      */
-    public function subSecond()
+    public function subSecond(): DateInterval
     {
         return $this->subSeconds(1);
     }
@@ -830,7 +830,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return self
      */
-    public function subSeconds($seconds)
+    public function subSeconds(int $seconds): DateInterval
     {
         return $this->addSeconds(-$seconds);
     }
@@ -840,7 +840,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return self
      */
-    public function subYear()
+    public function subYear(): DateInterval
     {
         return $this->subYears(1);
     }
@@ -852,7 +852,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return self
      */
-    public function subYears($years)
+    public function subYears(int $years): DateInterval
     {
         return $this->addYears(-$years);
     }
@@ -862,7 +862,7 @@ class DateInterval extends NativeDateInterval
      *
      * @return string
      */
-    public function toString()
+    public function toString(): string
     {
         $parts = [];
         if ($this->y != 0) {
