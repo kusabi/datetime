@@ -83,7 +83,38 @@ vendor/bin/phpbench xdebug:profile --gui
 ```
 
 
-## Documentation
+## How to use the library
+
+This section covers documentation for using the datetime library.
+
+The library extends each of the native PHP datetime classes to make each of them a little more useful and user-friendly.
+
+### Examples of whole library
+
+```php
+use Kusabi\Date\DateTime;
+
+// Tomorrow end of working day
+$date = DateTime::tomorrow()->setTime(5,0,0);
+
+// Password expires in 30 days
+$date = DateTime::now()->addDays(30);
+
+// Password expires in 30 days (end of day)
+$date = DateTime::now()->addDays(30)->endOfDay();
+
+// Get the number of days between two dates
+$from = DateTime::createFromFormat('Y-m-d', '2000-01-01');
+$to = DateTime::createFromFormat('Y-m-d', '2003-05-01');
+$days = $from->diff($to)->getDays(); // 1120
+
+```
+
+### Using the DateTime class
+
+The `DateTime` class has been extended to add new ways of creating, reading, modifying and converting the instance.
+
+#### Creating DateTime instances
 
 ```php
 use Kusabi\Date\DateTime;
@@ -99,23 +130,65 @@ $date = DateTime::instance();
 $date = DateTime::instance('monday');
 $date = DateTime::instance('tomorrow');
 
-// Create an instance from another instance
-$legacy = new \DateTime('tomorrow');
-$date = DateTime::createFromInstance($legacy);
+// Create from a date string
+$date = DateTime::date('2022-01-01');
 
-// Short hand creators
+// Create an instance from another instance
+$legacy = new \DateTime();
+$date = DateTime::createFromInstance($legacy);
+$carbon = new \Carbon();
+$date = DateTime::createFromInstance($carbon);
+$instance = new DateTime();
+$date = DateTime::createFromInstance($instance);
+
+// Quick shorthand creators
 $date = DateTime::now();       // 2020-01-02 12:30:00
 $date = DateTime::today();     // 2020-01-02 00:00:00
 $date = DateTime::yesterday(); // 2020-01-01 00:00:00
 $date = DateTime::tomorrow();  // 2020-01-03 00:00:00
 
-// Create from timestamps or microtime
+// Create from timestamps or micro-time
 $date = DateTime::createFromTimestamp(time());
 $date = DateTime::createFromTimestamp(microtime(true));
 $date = DateTime::createFromTimestamp(microtime());
 $date = DateTime::createFromTimestamp(time(), DateTimeZone::LondonEurope());
 $date = DateTime::createFromTimestamp(microtime(true), DateTimeZone::LondonEurope());
 $date = DateTime::createFromTimestamp(microtime(), DateTimeZone::LondonEurope());
+```
+
+#### Reading DateTime instances
+```php
+use Kusabi\Date\DateTime;
+use Kusabi\Date\DateTimeZone;
+
+$date = DateTime::createFromFormat('Y-m-d H:i:s', '2030-12-25 07:30:00');
+
+// Reading units
+$date->getDayOfMonth();      // 25
+$date->getDayOfWeek();       // 1
+$date->getDayName();         // Monday
+$date->getDayShortName();    // Mon
+$date->getDaysInMonth();     // 31
+$date->getDaysLeftInMonth(); // 6
+$date->getMonth();           // 1
+$date->getMonthName();       // January
+$date->getMonthShortName();  // Jan
+$date->getYear();            // 2030
+$date->getDayOfYear();       // 358
+
+// Get the timezone
+$date->getTimezone();
+$date->getTimezone()->getCountryCode(); // CZ
+
+// Common checks
+$date->isWeekday(); // true
+$date->isWeekend(); // false
+```
+
+#### Modifying DateTime instances
+```php
+use Kusabi\Date\DateTime;
+use Kusabi\Date\DateTimeZone;
 
 // Set time zone
 $date = new DateTime();
@@ -139,17 +212,6 @@ $date->setYear(12);
 $date->setTime(7, 30, 0);
 $date->setDay(25)->setMonth(12)->setYear(2020)->setTime(7, 30, 0);
 $date->setDate(2020, 12, 25)->setTime(7, 30, 0);
-
-// Reading units
-$date->getDayOfMonth();      // 25
-$date->getDayOfWeek();       // 1
-$date->getDayName();         // Monday
-$date->getDayShortName();    // Mon
-$date->getDaysInMonth();     // 31
-$date->getDaysLeftInMonth(); // 6
-$date->getMonth();           // 1
-$date->getMonthName();       // January
-$date->getMonthShortName();  // Jan
 
 // Adding units
 $date->addSecond();
@@ -178,10 +240,27 @@ $date->subMonth();
 $date->subMonths(10);
 $date->subYear();
 $date->subYears(10);
-
 ```
 
-## DateInterval
+#### Converting DateTime instances
+```php
+use Kusabi\Date\DateTime;
+use Kusabi\Date\DateTimeZone;
+
+$date = DateTime::createFromFormat('Y-m-d H:i:s', '2020-06-18 14:11:22', DateTimeZone::BrokenHillAustralia());
+(string) $datetime; // 2020-06-18T14:11:22+09:30
+
+// Cast to string
+$date = DateTime::createFromFormat('Y-m-d H:i:s', '2020-06-18 14:11:22', DateTimeZone::BrokenHillAustralia());
+echo $datetime->toString(); // 2020-06-18T14:11:22+09:30
+echo (string) $datetime; // 2020-06-18T14:11:22+09:30
+```
+
+## Using the DateInterval class
+
+The `DateInterval` class has been extended to add new ways of creating, reading, modifying, optimising, cloning and converting the instance.
+
+#### Creating DateInterval instances
 
 ```php
 use Kusabi\Date\DateInterval;
@@ -197,6 +276,11 @@ $interval = DateInterval::instance('P1YT10S');
 // Create an instance from another instance
 $legacy = new \DateInterval('P1YT10S');
 $interval = DateInterval::createFromInstance($legacy);
+$carbon = new \Carbon\CarbonInterval('P1YT10S');
+$interval = DateInterval::createFromInstance($carbon);
+$instance = new DateInterval('P1YT10S');
+$interval = DateInterval::createFromInstance($instance);
+
 
 // Create from values
 $interval = DateInterval::createFromValues(1, 2, 3, 4, 5, 6); // years, months, days, hours, minutes, seconds
@@ -216,6 +300,12 @@ $interval = DateInterval::month();
 $interval = DateInterval::months(6);
 $interval = DateInterval::year();
 $interval = DateInterval::years(100);
+```
+
+```php
+use Kusabi\Date\DateInterval;
+
+
 
 // Get the spec from the instance
 $interval = DateInterval::year()->getSpec();
