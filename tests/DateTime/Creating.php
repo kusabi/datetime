@@ -109,8 +109,8 @@ class Creating extends TestCase
      */
     public function testCreateFromTimestampMicroTimeFalse()
     {
-        $a = DateTime::createFromTimestamp('0.46060200 1594283757');
-        $b = DateTime::createFromTimestamp('0.46060200 1594283757', DateTimeZone::AddisAbabaAfrica());
+        $a = DateTime::createFromTimestamp('0.460602 1594283757');
+        $b = DateTime::createFromTimestamp('0.460602 1594283757', DateTimeZone::AddisAbabaAfrica());
         $this->assertSame('2020-07-09 08:35:57 1594283757.460602', $a->format('Y-m-d H:i:s U.u'));
         $this->assertSame('2020-07-09 11:35:57 1594283757.460602', $b->format('Y-m-d H:i:s U.u'));
     }

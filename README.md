@@ -12,7 +12,7 @@
 
 ## Compatibility and dependencies
 
-This library is compatible with PHP version `7.2`, `7.3`, `7.4` and `8.0`.
+This library is compatible with PHP version `7.2`, `7.3`, `7.4`, `8.0` and `8.1`.
 
 This library has no dependencies.
 

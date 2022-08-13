@@ -92,6 +92,68 @@ class Modifying extends TestCase
     }
 
     /**
+     * Test adding a second
+     *
+     * @return void
+     *
+     * @covers \Kusabi\Date\DateTime::addMicrosecond
+     */
+    public function testAddMicrosecond()
+    {
+        // Increase unit
+        $this->assertSame('2020-01-01 00:00:00.555667', DateTime::createFromTimestamp('0.555666 1577836800')->addMicrosecond()->format('Y-m-d H:i:s.u'));
+
+        // Tick over to second
+        $this->assertSame('2020-01-01 00:00:01.000000', DateTime::createFromTimestamp('0.999999 1577836800')->addMicrosecond()->format('Y-m-d H:i:s.u'));
+
+        // Tick over to minute
+        $this->assertSame('2020-01-01 00:01:00.000000', DateTime::createFromTimestamp('0.999999 1577836859')->addMicrosecond()->format('Y-m-d H:i:s.u'));
+
+        // Tick over to hour
+        $this->assertSame('2020-01-01 01:00:00.000000', DateTime::createFromTimestamp('0.999999 1577840399')->addMicrosecond()->format('Y-m-d H:i:s.u'));
+
+        // Tick over to day
+        $this->assertSame('2020-01-02 00:00:00.000000', DateTime::createFromTimestamp('0.999999 1577923199')->addMicrosecond()->format('Y-m-d H:i:s.u'));
+
+        // Tick over to month
+        $this->assertSame('2020-02-01 00:00:00.000000', DateTime::createFromTimestamp('0.999999 1580515199')->addMicrosecond()->format('Y-m-d H:i:s.u'));
+
+        // Tick over to year
+        $this->assertSame('2021-01-01 00:00:00.000000', DateTime::createFromTimestamp('0.999999 1609459199')->addMicrosecond()->format('Y-m-d H:i:s.u'));
+    }
+
+    /**
+     * Test adding a second
+     *
+     * @return void
+     *
+     * @covers \Kusabi\Date\DateTime::addMicroseconds
+     */
+    public function testAddMicroseconds()
+    {
+        // Increase unit
+        $this->assertSame('2020-01-01 00:00:00.555999', DateTime::createFromTimestamp('0.555666 1577836800')->addMicroseconds(333)->format('Y-m-d H:i:s.u'));
+
+        // Tick over to second
+        $this->assertSame('2020-01-01 00:00:01.000000', DateTime::createFromTimestamp('0.999998 1577836800')->addMicroseconds(2)->format('Y-m-d H:i:s.u'));
+
+        // Tick over to minute
+        $this->assertSame('2020-01-01 00:01:00.000000', DateTime::createFromTimestamp('0.999997 1577836859')->addMicroseconds(3)->format('Y-m-d H:i:s.u'));
+
+        // Tick over to hour
+        $this->assertSame('2020-01-01 01:00:00.000000', DateTime::createFromTimestamp('0.999996 1577840399')->addMicroseconds(4)->format('Y-m-d H:i:s.u'));
+
+        // Tick over to day
+        $this->assertSame('2020-01-02 00:00:00.000000', DateTime::createFromTimestamp('0.999995 1577923199')->addMicroseconds(5)->format('Y-m-d H:i:s.u'));
+
+        // Tick over to month
+        $this->assertSame('2020-02-01 00:00:00.000000', DateTime::createFromTimestamp('0.999994 1580515199')->addMicroseconds(6)->format('Y-m-d H:i:s.u'));
+
+        // Tick over to year
+        $this->assertSame('2021-01-01 00:00:00.000000', DateTime::createFromTimestamp('0.999993 1609459199')->addMicroseconds(7)->format('Y-m-d H:i:s.u'));
+    }
+
+    /**
      * Test adding a minute
      *
      * @return void
@@ -269,6 +331,20 @@ class Modifying extends TestCase
     }
 
     /**
+     * Test setting to the end of the day
+     *
+     * @return void
+     *
+     * @covers \Kusabi\Date\DateTime::endOfDay
+     */
+    public function testEndOfDayKeepsMilliseconds()
+    {
+        $datetime = DateTime::createFromTimestamp('0.460602 1594283757');
+        $this->assertSame('2020-07-09 08:35:57 1594283757.460602', $datetime->format('Y-m-d H:i:s U.u'));
+        $this->assertSame('2020-07-09 23:59:59 1594339199.460602', $datetime->endOfDay()->format('Y-m-d H:i:s U.u'));
+    }
+
+    /**
      * Test setting to the end of the month
      *
      * @return void
@@ -317,6 +393,60 @@ class Modifying extends TestCase
     }
 
     /**
+     * Test setting the hours
+     *
+     * @return void
+     *
+     * @covers \Kusabi\Date\DateTime::setHours
+     */
+    public function testSetHours()
+    {
+        $datetime = DateTime::createFromFormat('U.u', '631170305.555666');
+        $this->assertSame('1989-12-31 23:05:05.555666', $datetime->cloned()->setHours(-1)->format('Y-m-d H:i:s.u'));
+        $this->assertSame('1990-01-01 00:05:05.555666', $datetime->cloned()->setHours(0)->format('Y-m-d H:i:s.u'));
+        $this->assertSame('1990-01-01 01:05:05.555666', $datetime->cloned()->setHours(1)->format('Y-m-d H:i:s.u'));
+        $this->assertSame('1990-01-01 05:05:05.555666', $datetime->cloned()->setHours(5)->format('Y-m-d H:i:s.u'));
+        $this->assertSame('1990-01-01 23:05:05.555666', $datetime->cloned()->setHours(23)->format('Y-m-d H:i:s.u'));
+        $this->assertSame('1990-01-02 00:05:05.555666', $datetime->cloned()->setHours(24)->format('Y-m-d H:i:s.u'));
+    }
+
+    /**
+     * Test setting the microseconds
+     *
+     * @return void
+     *
+     * @covers \Kusabi\Date\DateTime::setMicroseconds
+     */
+    public function testSetMicroseconds()
+    {
+        $datetime = DateTime::createFromFormat('U.u', '631170305.555666');
+        $this->assertSame('1990-01-01 05:05:04.999999', $datetime->cloned()->setMicroseconds(-1)->format('Y-m-d H:i:s.u'));
+        $this->assertSame('1990-01-01 05:05:05.000000', $datetime->cloned()->setMicroseconds(0)->format('Y-m-d H:i:s.u'));
+        $this->assertSame('1990-01-01 05:05:05.000001', $datetime->cloned()->setMicroseconds(1)->format('Y-m-d H:i:s.u'));
+        $this->assertSame('1990-01-01 05:05:05.555666', $datetime->cloned()->setMicroseconds(555666)->format('Y-m-d H:i:s.u'));
+        $this->assertSame('1990-01-01 05:05:05.999999', $datetime->cloned()->setMicroseconds(999999)->format('Y-m-d H:i:s.u'));
+        $this->assertSame('1990-01-01 05:05:06.000000', $datetime->cloned()->setMicroseconds(1000000)->format('Y-m-d H:i:s.u'));
+    }
+
+    /**
+     * Test setting the minutes
+     *
+     * @return void
+     *
+     * @covers \Kusabi\Date\DateTime::setMinutes
+     */
+    public function testSetMinutes()
+    {
+        $datetime = DateTime::createFromFormat('U.u', '631170305.555666');
+        $this->assertSame('1990-01-01 04:59:05.555666', $datetime->cloned()->setMinutes(-1)->format('Y-m-d H:i:s.u'));
+        $this->assertSame('1990-01-01 05:00:05.555666', $datetime->cloned()->setMinutes(0)->format('Y-m-d H:i:s.u'));
+        $this->assertSame('1990-01-01 05:01:05.555666', $datetime->cloned()->setMinutes(1)->format('Y-m-d H:i:s.u'));
+        $this->assertSame('1990-01-01 05:05:05.555666', $datetime->cloned()->setMinutes(5)->format('Y-m-d H:i:s.u'));
+        $this->assertSame('1990-01-01 05:59:05.555666', $datetime->cloned()->setMinutes(59)->format('Y-m-d H:i:s.u'));
+        $this->assertSame('1990-01-01 06:00:05.555666', $datetime->cloned()->setMinutes(60)->format('Y-m-d H:i:s.u'));
+    }
+
+    /**
      * Test setting the month
      *
      * @return void
@@ -331,6 +461,46 @@ class Modifying extends TestCase
         $this->assertSame('2020-03-29', DateTime::createFromFormat('Y-m-d', '2020-02-29')->setMonth(3)->format('Y-m-d'));
         $this->assertSame('2020-03-01', DateTime::createFromFormat('Y-m-d', '2020-03-30')->setMonth(2)->format('Y-m-d'));
         $this->assertSame('2019-03-02', DateTime::createFromFormat('Y-m-d', '2019-03-30')->setMonth(2)->format('Y-m-d'));
+    }
+
+    /**
+     * Test setting the seconds
+     *
+     * @return void
+     *
+     * @covers \Kusabi\Date\DateTime::setSeconds
+     */
+    public function testSetSeconds()
+    {
+        $datetime = DateTime::createFromFormat('U.u', '631170305.555666');
+        $this->assertSame('1990-01-01 05:04:59.555666', $datetime->cloned()->setSeconds(-1)->format('Y-m-d H:i:s.u'));
+        $this->assertSame('1990-01-01 05:05:00.555666', $datetime->cloned()->setSeconds(0)->format('Y-m-d H:i:s.u'));
+        $this->assertSame('1990-01-01 05:05:01.555666', $datetime->cloned()->setSeconds(1)->format('Y-m-d H:i:s.u'));
+        $this->assertSame('1990-01-01 05:05:05.555666', $datetime->cloned()->setSeconds(5)->format('Y-m-d H:i:s.u'));
+        $this->assertSame('1990-01-01 05:05:59.555666', $datetime->cloned()->setSeconds(59)->format('Y-m-d H:i:s.u'));
+        $this->assertSame('1990-01-01 05:06:00.555666', $datetime->cloned()->setSeconds(60)->format('Y-m-d H:i:s.u'));
+    }
+
+    /**
+     * Test setting the timestamp
+     *
+     * @return void
+     *
+     * @covers \Kusabi\Date\DateTime::setTimestamp
+     */
+    public function testSetTimestamp()
+    {
+        $a = DateTime::now();
+        $a->setTimestamp('1594283757');
+        $this->assertSame('2020-07-09 08:35:57 1594283757.000000', $a->format('Y-m-d H:i:s U.u'));
+
+        $a = DateTime::now();
+        $a->setTimestamp(1594283757.460);
+        $this->assertSame('2020-07-09 08:35:57 1594283757.460000', $a->format('Y-m-d H:i:s U.u'));
+
+        $a = DateTime::now();
+        $a->setTimestamp('0.460602 1594283757');
+        $this->assertSame('2020-07-09 08:35:57 1594283757.460602', $a->format('Y-m-d H:i:s U.u'));
     }
 
     /**
@@ -509,6 +679,68 @@ class Modifying extends TestCase
 
         // Tick over year
         $this->assertSame('2020-12-31 23:00:00', DateTime::createFromFormat('Y-m-d H:i:s', '2021-01-01 11:00:00')->subHours(12)->format('Y-m-d H:i:s'));
+    }
+
+    /**
+     * Test subtracting a microsecond
+     *
+     * @return void
+     *
+     * @covers \Kusabi\Date\DateTime::subMicrosecond
+     */
+    public function testSubMicrosecond()
+    {
+        // Increase unit
+        $this->assertSame('2020-01-01 00:00:00.555665', DateTime::createFromTimestamp('0.555666 1577836800')->subMicrosecond()->format('Y-m-d H:i:s.u'));
+
+        // Tick over to year
+        $this->assertSame('2019-12-31 23:59:59.999999', DateTime::createFromTimestamp('0.000000 1577836800')->subMicrosecond()->format('Y-m-d H:i:s.u'));
+
+        // Tick over to month
+        $this->assertSame('2020-01-31 23:59:59.999999', DateTime::createFromTimestamp('0.000000 1580515200')->subMicrosecond()->format('Y-m-d H:i:s.u'));
+
+        // Tick over to day
+        $this->assertSame('2020-01-01 23:59:59.999999', DateTime::createFromTimestamp('0.000000 1577923200')->subMicrosecond()->format('Y-m-d H:i:s.u'));
+
+        // Tick over to hour
+        $this->assertSame('2020-01-01 00:59:59.999999', DateTime::createFromTimestamp('0.000000 1577840400')->subMicrosecond()->format('Y-m-d H:i:s.u'));
+
+        // Tick over to minute
+        $this->assertSame('2020-01-01 00:00:59.999999', DateTime::createFromTimestamp('0.000000 1577836860')->subMicrosecond()->format('Y-m-d H:i:s.u'));
+
+        // Tick over to second
+        $this->assertSame('2020-01-01 00:00:00.999999', DateTime::createFromTimestamp('0.000000 1577836801')->subMicrosecond()->format('Y-m-d H:i:s.u'));
+    }
+
+    /**
+     * Test subtracting microseconds
+     *
+     * @return void
+     *
+     * @covers \Kusabi\Date\DateTime::subMicroseconds
+     */
+    public function testSubMicroseconds()
+    {
+        // Increase unit
+        $this->assertSame('2020-01-01 00:00:00.555333', DateTime::createFromTimestamp('0.555666 1577836800')->subMicroseconds(333)->format('Y-m-d H:i:s.u'));
+
+        // Tick over to year
+        $this->assertSame('2019-12-31 23:59:59.999999', DateTime::createFromTimestamp('0.000000 1577836800')->subMicroseconds(1)->format('Y-m-d H:i:s.u'));
+
+        // Tick over to month
+        $this->assertSame('2020-01-31 23:59:59.999999', DateTime::createFromTimestamp('0.000001 1580515200')->subMicroseconds(2)->format('Y-m-d H:i:s.u'));
+
+        // Tick over to day
+        $this->assertSame('2020-01-01 23:59:59.999999', DateTime::createFromTimestamp('0.000002 1577923200')->subMicroseconds(3)->format('Y-m-d H:i:s.u'));
+
+        // Tick over to hour
+        $this->assertSame('2020-01-01 00:59:59.999999', DateTime::createFromTimestamp('0.000003 1577840400')->subMicroseconds(4)->format('Y-m-d H:i:s.u'));
+
+        // Tick over to minute
+        $this->assertSame('2020-01-01 00:00:59.999999', DateTime::createFromTimestamp('0.000004 1577836860')->subMicroseconds(5)->format('Y-m-d H:i:s.u'));
+
+        // Tick over to second
+        $this->assertSame('2020-01-01 00:00:00.999999', DateTime::createFromTimestamp('0.000005 1577836801')->subMicroseconds(6)->format('Y-m-d H:i:s.u'));
     }
 
     /**

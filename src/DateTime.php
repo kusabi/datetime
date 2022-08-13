@@ -30,13 +30,10 @@ class DateTime extends \DateTime
      * @param DateTimeInterface $datetime
      *
      * @return static
-     *
-     * @noinspection PhpDocMissingThrowsInspection
-     * @noinspection PhpUnhandledExceptionInspection
      */
     public static function createFromInstance(DateTimeInterface $datetime): self
     {
-        return new static($datetime->format('Y-m-d H:i:s.u'), $datetime->getTimezone());
+        return static::now()->copy($datetime);
     }
 
     /**
@@ -46,25 +43,10 @@ class DateTime extends \DateTime
      * @param DateTimeZone|null $timezone
      *
      * @return static
-     *
-     * @noinspection PhpUnhandledExceptionInspection
-     * @noinspection PhpDocMissingThrowsInspection
      */
     public static function createFromTimestamp($timestamp, DateTimeZone $timezone = null): self
     {
-        $timezone = $timezone ?: DateTimeZone::UTC();
-
-        if (is_float($timestamp)) {
-            return static::createFromFormat('U.u', (string) $timestamp)->setTimezone($timezone);
-        }
-
-        if (is_string($timestamp)) {
-            list($milli, $seconds) = explode(' ', $timestamp);
-            $float = number_format((double) $milli + (int) $seconds, 6, '.', '');
-            return static::createFromFormat('U.u', $float)->setTimezone($timezone);
-        }
-
-        return static::instance('now', $timezone)->setTimestamp((int) $timestamp);
+        return static::instance('now', $timezone)->setTimestamp($timestamp);
     }
 
     /**
@@ -182,6 +164,26 @@ class DateTime extends \DateTime
     }
 
     /**
+     * Add a microsecond to the date
+     *
+     * @return static
+     */
+    public function addMicrosecond(): self
+    {
+        return $this->addMicroseconds(1);
+    }
+
+    /**
+     * Add a microsecond to the date
+     *
+     * @return static
+     */
+    public function addMicroseconds(int $microseconds): self
+    {
+        return $this->setTime($this->getHours(), $this->getMinutes(), $this->getSeconds(), $this->getMicroseconds() + $microseconds);
+    }
+
+    /**
      * Add a minute to the date
      *
      * @return static
@@ -270,6 +272,30 @@ class DateTime extends \DateTime
     }
 
     /**
+     * Get a cloned version of this instance. Useful for chaining
+     *
+     * @return static
+     */
+    public function cloned(): self
+    {
+        return clone $this;
+    }
+
+    /**
+     * Copy the values from another date interval
+     *
+     * DateTimeInterface $other
+     *
+     * @return static
+     */
+    public function copy(DateTimeInterface $other): self
+    {
+        $this->setTimezone($other->getTimezone());
+        $this->setTimestamp($other->format('\0.u U'));
+        return $this;
+    }
+
+    /**
      * {@inheritDoc}
      *
      * @return DateInterval
@@ -288,7 +314,7 @@ class DateTime extends \DateTime
      */
     public function endOfDay(): self
     {
-        return $this->setTime(23, 59, 59);
+        return $this->setTime(23, 59, 59, $this->getMicroseconds());
     }
 
     /**
@@ -372,6 +398,36 @@ class DateTime extends \DateTime
     }
 
     /**
+     * Get the hours of this datetime
+     *
+     * @return int
+     */
+    public function getHours(): int
+    {
+        return (int) $this->format('H');
+    }
+
+    /**
+     * Get the microseconds of this datetime
+     *
+     * @return int
+     */
+    public function getMicroseconds(): int
+    {
+        return (int) $this->format('u');
+    }
+
+    /**
+     * Get the minutes of this datetime
+     *
+     * @return int
+     */
+    public function getMinutes(): int
+    {
+        return (int) $this->format('i');
+    }
+
+    /**
      * Get the month from the date
      *
      * @return int
@@ -399,6 +455,16 @@ class DateTime extends \DateTime
     public function getMonthShortName(): string
     {
         return $this->format('M');
+    }
+
+    /**
+     * Get the seconds of this datetime
+     *
+     * @return int
+     */
+    public function getSeconds(): int
+    {
+        return (int) $this->format('s');
     }
 
     /**
@@ -463,13 +529,52 @@ class DateTime extends \DateTime
      *
      * @return static
      *
-     * @see Date::createFromFormat()
+     * @see \DateTime::createFromFormat()
      */
     public function setFromFormat(string $format, string $time): self
     {
         $this->setTimestamp(
             DateTime::createFromFormat($format, $time, $this->getTimezone())->getTimestamp()
         );
+        return $this;
+    }
+
+    /**
+     * Set the hours of the datetime
+     *
+     * @param int $hours
+     *
+     * @return static
+     */
+    public function setHours(int $hours): self
+    {
+        $this->setTime($hours, $this->getMinutes(), $this->getSeconds(), $this->getMicroseconds());
+        return $this;
+    }
+
+    /**
+     * Set the microseconds of the datetime
+     *
+     * @param int $microseconds
+     *
+     * @return static
+     */
+    public function setMicroseconds(int $microseconds): self
+    {
+        $this->setTime($this->getHours(), $this->getMinutes(), $this->getSeconds(), $microseconds);
+        return $this;
+    }
+
+    /**
+     * Set the minutes of the datetime
+     *
+     * @param int $minutes
+     *
+     * @return static
+     */
+    public function setMinutes(int $minutes): self
+    {
+        $this->setTime($this->getHours(), $minutes, $this->getSeconds(), $this->getMicroseconds());
         return $this;
     }
 
@@ -483,6 +588,51 @@ class DateTime extends \DateTime
     public function setMonth(int $month): self
     {
         return $this->setDate($this->getYear(), $month, $this->getDayOfMonth());
+    }
+
+    /**
+     * Set the seconds of the datetime
+     *
+     * @param int $seconds
+     *
+     * @return static
+     */
+    public function setSeconds(int $seconds): self
+    {
+        $this->setTime($this->getHours(), $this->getMinutes(), $seconds, $this->getMicroseconds());
+        return $this;
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * @param float|int|string $timestamp
+     *
+     * @return static
+     *
+     * @see \DateTime::diff()
+     */
+    public function setTimestamp($timestamp): self
+    {
+        if (is_float($timestamp)) {
+            $seconds = (int) $timestamp;
+            $ms = round($timestamp - $seconds, 4);
+            parent::setTimestamp($seconds);
+            $this->setTime($this->getHours(), $this->getMinutes(), $this->getSeconds(), (int) ($ms * 1000000));
+            return $this;
+        }
+
+        if (is_string($timestamp) && !is_numeric($timestamp)) {
+            list($ms, $seconds) = explode(' ', $timestamp);
+            $ms = (float) $ms;
+            $seconds = (int) $seconds;
+            parent::setTimestamp($seconds);
+            $this->setTime($this->getHours(), $this->getMinutes(), $this->getSeconds(), (int) ($ms * 1000000));
+            return $this;
+        }
+
+        parent::setTimestamp($timestamp);
+        return $this;
     }
 
     /**
@@ -578,6 +728,28 @@ class DateTime extends \DateTime
     public function subHours(int $hours): self
     {
         return $this->sub(DateInterval::hours($hours));
+    }
+
+    /**
+     * Subtract a microsecond from the date
+     *
+     * @return static
+     */
+    public function subMicrosecond(): self
+    {
+        return $this->subMicroseconds(1);
+    }
+
+    /**
+     * Subtract microseconds from the date
+     *
+     * @param int $microseconds
+     *
+     * @return static
+     */
+    public function subMicroseconds(int $microseconds): self
+    {
+        return $this->addMicroseconds(-$microseconds);
     }
 
     /**
