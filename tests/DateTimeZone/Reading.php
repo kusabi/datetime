@@ -65,6 +65,21 @@ class Reading extends TestCase
     }
 
     /**
+     * Test getting the default timezone
+     *
+     * @return void
+     *
+     * @covers \Kusabi\Date\DateTimeZone::getDefault
+     */
+    public function testGetDefault()
+    {
+        $og = date_default_timezone_get();
+        date_default_timezone_set('America/Los_Angeles');
+        $this->assertTrue(DateTimeZone::getDefault()->equal(DateTimeZone::LosAngelesAmerica()));
+        date_default_timezone_set($og);
+    }
+
+    /**
      * Test that we can get the latitude
      *
      * @dataProvider provideTimezoneLocations

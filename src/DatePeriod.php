@@ -70,6 +70,18 @@ class DatePeriod extends NativeDatePeriod
     }
 
     /**
+     * Get all the dates
+     *
+     * @return DateTime[]
+     */
+    public function getDateTimes(): array
+    {
+        return array_map(function (DateTimeInterface $datetime) {
+            return DateTime::createFromInstance($datetime);
+        }, iterator_to_array($this));
+    }
+
+    /**
      * Get the end date as our datetime instance
      *
      * @return DateTime

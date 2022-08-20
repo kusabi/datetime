@@ -41,6 +41,31 @@ class Creating extends TestCase
     }
 
     /**
+     * Test isValidTimezoneName with positive matches
+     *
+     * @dataProvider provideTimezones
+     *
+     * @param string $name
+     *
+     * @covers       \Kusabi\Date\DateTimeZone::isValidTimezoneName
+     */
+    public function testIsValidTimezoneNamePositive(string $name)
+    {
+        $this->assertTrue(DateTimeZone::isValidTimezoneName($name));
+    }
+
+    /**
+     * Test isValidTimezoneName with negative matches
+     *
+     * @covers \Kusabi\Date\DateTimeZone::isValidTimezoneName
+     */
+    public function testIsValidTimezoneNameNegative()
+    {
+        $this->assertFalse(DateTimeZone::isValidTimezoneName('not-real'));
+        $this->assertFalse(DateTimeZone::isValidTimezoneName(false));
+    }
+
+    /**
      * Test that the constructor will default ot UTC if no name is provided
      *
      * @return void
@@ -52,6 +77,19 @@ class Creating extends TestCase
         $timezone = new DateTimeZone();
         $this->assertInstanceOf(NativeDateTimeZone::class, $timezone);
         $this->assertSame('UTC', $timezone->getName());
+    }
+
+    /**
+     * Test creating from any input
+     *
+     * @covers \Kusabi\Date\DateTimeZone::createFromAnything
+     */
+    public function testCreateFromAnything()
+    {
+        $this->assertSame('Asia/Tokyo', DateTimeZone::createFromAnything('Asia/Tokyo')->getName());
+        $this->assertSame('Asia/Tokyo', DateTimeZone::createFromAnything(DateTimeZone::TokyoAsia())->getName());
+        $this->assertSame(null, DateTimeZone::createFromAnything(null));
+        $this->assertSame(null, DateTimeZone::createFromAnything('bob'));
     }
 
     /**

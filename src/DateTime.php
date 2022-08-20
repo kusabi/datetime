@@ -8,6 +8,40 @@ use Exception;
 class DateTime extends \DateTime
 {
     /**
+     * Create from date parameters
+     *
+     * @param int $year
+     * @param int $month
+     * @param int $day
+     * @param \DateTimeZone|string|null $timezone
+     *
+     * @return static
+     */
+    public static function createFromDate(int $year, int $month, int $day, $timezone = null): self
+    {
+        return static::now($timezone)->setDate($year, $month, $day);
+    }
+
+    /**
+     * Create from date and time parameters
+     *
+     * @param int $year
+     * @param int $month
+     * @param int $day
+     * @param int $hours
+     * @param int $minutes
+     * @param int $seconds
+     * @param int $microseconds
+     * @param \DateTimeZone|string|null $timezone
+     *
+     * @return static
+     */
+    public static function createFromDateAndTime(int $year, int $month, int $day, int $hours, int $minutes, int $seconds, int $microseconds = 0, $timezone = null): self
+    {
+        return static::createFromDate($year, $month, $day, $timezone)->setTime($hours, $minutes, $seconds, $microseconds);
+    }
+
+    /**
      * {@inheritDoc}
      *
      * Override the method to return an epoch date
@@ -20,7 +54,7 @@ class DateTime extends \DateTime
      */
     public static function createFromFormat($format, $datetime, $timezone = null)
     {
-        $legacy = parent::createFromFormat($format, $datetime, $timezone);
+        $legacy = parent::createFromFormat($format, $datetime, DateTimeZone::createFromAnything($timezone));
         return $legacy ? static::createFromInstance($legacy) : false;
     }
 
@@ -40,13 +74,16 @@ class DateTime extends \DateTime
      * Create a new instance from a unix timestamp
      *
      * @param int|float|string $timestamp
-     * @param DateTimeZone|null $timezone
+     * @param \DateTimeZone|string|null $timezone
+     *
+     * @throws Exception
      *
      * @return static
+     *
      */
-    public static function createFromTimestamp($timestamp, DateTimeZone $timezone = null): self
+    public static function createFromTimestamp($timestamp, $timezone = null): self
     {
-        return static::instance('now', $timezone)->setTimestamp($timestamp);
+        return static::instance('now', DateTimeZone::createFromAnything($timezone))->setTimestamp($timestamp);
     }
 
     /**
@@ -55,7 +92,7 @@ class DateTime extends \DateTime
      * Useful for chaining commands
      *
      * @param string $time
-     * @param DateTimeZone|null $timezone
+     * @param \DateTimeZone|string|null $timezone
      *
      * @throws Exception Emits Exception in case of an error.
      *
@@ -64,49 +101,60 @@ class DateTime extends \DateTime
      * @see DateTime::__construct
      * @link https://php.net/manual/en/datetime.construct.php
      */
-    public static function instance(string $time = 'now', DateTimeZone $timezone = null): self
+    public static function instance(string $time = 'now', $timezone = null): self
     {
-        return new static($time, $timezone);
+        return new static($time, DateTimeZone::createFromAnything($timezone));
     }
 
     /**
      * Create an instance of a date for right now.
      *
+     * @param \DateTimeZone|string|null $timezone
+     *
+     * @throws Exception
+     *
      * @return static
+     *
      */
-    public static function now(): self
+    public static function now($timezone = null): self
     {
-        return new static();
+        return new static('now', DateTimeZone::createFromAnything($timezone));
     }
 
     /**
      * Create an instance of a date for today.
      *
+     * @param \DateTimeZone|string|null $timezone
+     *
      * @return static
      */
-    public static function today(): self
+    public static function today($timezone = null): self
     {
-        return static::now()->startOfDay();
+        return static::now($timezone)->startOfDay();
     }
 
     /**
      * Create an instance of a date for tomorrow.
      *
+     * @param \DateTimeZone|string|null $timezone
+     *
      * @return static
      */
-    public static function tomorrow(): self
+    public static function tomorrow($timezone = null): self
     {
-        return static::today()->add(DateInterval::day());
+        return static::today($timezone)->add(DateInterval::day());
     }
 
     /**
      * Create an instance of a date for yesterday.
      *
+     * @param \DateTimeZone|string|null $timezone
+     *
      * @return static
      */
-    public static function yesterday(): self
+    public static function yesterday($timezone = null): self
     {
-        return static::today()->sub(DateInterval::day());
+        return static::today($timezone)->sub(DateInterval::day());
     }
 
     /**
@@ -328,6 +376,19 @@ class DateTime extends \DateTime
     }
 
     /**
+     * Get all the dates between this date and other date
+     *
+     * @param DateTimeInterface $other
+     * @param DateTimeInterface|null $interval
+     *
+     * @return DateTime[]
+     */
+    public function getDateTimesTo(DateTimeInterface $other, DateTimeInterface $interval = null): array
+    {
+        return DatePeriod::instance($this, $interval ?? DateInterval::day(), $other)->getDateTimes();
+    }
+
+    /**
      * Get the name of the day
      *
      * @return string
@@ -490,6 +551,16 @@ class DateTime extends \DateTime
     }
 
     /**
+     * Is the timezone the same as the local timezone?
+     *
+     * @return bool
+     */
+    public function isLocal(): bool
+    {
+        return $this->getTimezone()->equal(DateTimeZone::getDefault());
+    }
+
+    /**
      * Is this datetime a weekday?
      *
      * @return bool
@@ -507,6 +578,24 @@ class DateTime extends \DateTime
     public function isWeekend(): bool
     {
         return $this->getDayName() === 'Saturday' || $this->getDayName() === 'Sunday';
+    }
+
+    /**
+     * Set the date and time parameters
+     *
+     * @param int $year
+     * @param int $month
+     * @param int $day
+     * @param int $hours
+     * @param int $minutes
+     * @param int $seconds
+     * @param int|null $microseconds
+     *
+     * @return static
+     */
+    public function setDateAndTime(int $year, int $month, int $day, int $hours, int $minutes, int $seconds, int $microseconds = null): self
+    {
+        return $this->setDate($year, $month, $day)->setTime($hours, $minutes, $seconds, $microseconds ?? $this->getMicroseconds());
     }
 
     /**
@@ -623,7 +712,7 @@ class DateTime extends \DateTime
         }
 
         if (is_string($timestamp) && !is_numeric($timestamp)) {
-            list($ms, $seconds) = explode(' ', $timestamp);
+            [$ms, $seconds] = explode(' ', $timestamp);
             $ms = (float) $ms;
             $seconds = (int) $seconds;
             parent::setTimestamp($seconds);
@@ -838,6 +927,36 @@ class DateTime extends \DateTime
     public function subYears(int $years): self
     {
         return $this->sub(DateInterval::years($years));
+    }
+
+    /**
+     * Convert to an array
+     *
+     * @return array
+     */
+    public function toArray(): array
+    {
+        return [
+            'year' => $this->getYear(),
+            'month' => $this->getMonth(),
+            'day' => $this->getDayOfMonth(),
+            'hour' => $this->getHours(),
+            'minute' => $this->getMinutes(),
+            'second' => $this->getSeconds(),
+            'microsecond' => $this->getMicroseconds(),
+            'timestamp' => $this->getTimestamp(),
+            'timezone' => $this->getTimezone()->getName(),
+        ];
+    }
+
+    /**
+     * Get a native datetime instance
+     *
+     * @return \DateTime
+     */
+    public function toNative(): \DateTime
+    {
+        return \DateTime::createFromFormat('Y-m-d H:i:s.u', $this->format('Y-m-d H:i:s.u'), $this->getTimezone());
     }
 
     /**

@@ -359,6 +359,19 @@ class Modifying extends TestCase
     }
 
     /**
+     * Test setting date and time as values
+     *
+     * @return void
+     *
+     * @covers \Kusabi\Date\DateTime::setDateAndTime
+     */
+    public function testSetDateAndTime()
+    {
+        $date = DateTime::createFromFormat('Y-m-d H:i:s', '2020-01-01 00:00:00');
+        $this->assertSame('2022-03-04 05:06:07', $date->setDateAndTime(2022, 3, 4, 5, 6, 7)->format('Y-m-d H:i:s'));
+    }
+
+    /**
      * Test setting day of the month
      *
      * @return void

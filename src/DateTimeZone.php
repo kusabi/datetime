@@ -5214,6 +5214,26 @@ class DateTimeZone extends NativeDateTimeZone
     }
 
     /**
+     * Create an instance from another instance or a timezone string
+     *
+     * @param \DateTimeZone|string|null $timezone
+     *
+     * @return static|null
+     */
+    public static function createFromAnything($timezone): ?self
+    {
+        if ($timezone instanceof \DateTimeZone) {
+            return static::createFromInstance($timezone);
+        }
+
+        if (is_string($timezone) && static::isValidTimezoneName($timezone)) {
+            return new DateTimeZone($timezone);
+        }
+
+        return null;
+    }
+
+    /**
      * Create an instance of this timezone class, using an instance of native NativeDateTimeZone
      *
      * @param NativeDateTimeZone $timezone
@@ -5231,6 +5251,16 @@ class DateTimeZone extends NativeDateTimeZone
     }
 
     /**
+     * Get the default timezone
+     *
+     * @return static
+     */
+    public static function getDefault(): self
+    {
+        return new static(date_default_timezone_get());
+    }
+
+    /**
      * Create an instance of this timezone class
      *
      * @param string $timezone
@@ -5242,6 +5272,18 @@ class DateTimeZone extends NativeDateTimeZone
     public static function instance(string $timezone = 'UTC'): self
     {
         return new static($timezone);
+    }
+
+    /**
+     * Determine if the string is a valid timezone name
+     *
+     * @param string $timezone
+     *
+     * @return bool
+     */
+    public static function isValidTimezoneName(string $timezone): bool
+    {
+        return in_array($timezone, timezone_identifiers_list());
     }
 
     /**

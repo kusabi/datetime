@@ -36,6 +36,30 @@ class Reading extends TestCase
     }
 
     /**
+     * Test getting an array of datetimes between two dates
+     *
+     * @return void
+     *
+     * @covers \Kusabi\Date\DateTime::getDateTimesTo
+     */
+    public function testGetDateTimesTo()
+    {
+        $from = DateTime::createFromFormat('Y-m-d', '2022-01-01');
+        $to = DateTime::createFromFormat('Y-m-d', '2022-01-09');
+        $dates = $from->getDateTimesTo($to);
+        $this->assertIsArray($dates);
+        $this->assertCount(8, $dates);
+        $this->assertSame('2022-01-01', $dates[0]->format('Y-m-d'));
+        $this->assertSame('2022-01-02', $dates[1]->format('Y-m-d'));
+        $this->assertSame('2022-01-03', $dates[2]->format('Y-m-d'));
+        $this->assertSame('2022-01-04', $dates[3]->format('Y-m-d'));
+        $this->assertSame('2022-01-05', $dates[4]->format('Y-m-d'));
+        $this->assertSame('2022-01-06', $dates[5]->format('Y-m-d'));
+        $this->assertSame('2022-01-07', $dates[6]->format('Y-m-d'));
+        $this->assertSame('2022-01-08', $dates[7]->format('Y-m-d'));
+    }
+
+    /**
      * Test getting the full name of the week
      *
      * @return void
@@ -189,22 +213,6 @@ class Reading extends TestCase
     }
 
     /**
-     * Test getMicroseconds
-     *
-     * @return void
-     *
-     * @covers \Kusabi\Date\DateTime::getMicroseconds
-     */
-    public function testMicroseconds()
-    {
-        $datetime = DateTime::createFromFormat('Y-m-d H:i:s', '2022-01-01 00:00:00');
-        $this->assertSame(0, $datetime->getMicroseconds());
-
-        $datetime = DateTime::createFromTimestamp('0.555555 1640995200');
-        $this->assertSame(555555, $datetime->getMicroseconds());
-    }
-
-    /**
      * Test getMinutes
      *
      * @return void
@@ -332,6 +340,23 @@ class Reading extends TestCase
     }
 
     /**
+     * Test isLocal
+     *
+     * @return void
+     *
+     * @covers \Kusabi\Date\DateTime::isLocal
+     */
+    public function testIsLocal()
+    {
+        $og = date_default_timezone_get();
+        date_default_timezone_set('America/Los_Angeles');
+        $this->assertTrue(DateTime::now()->isLocal());
+        $this->assertFalse(DateTime::now('Asia/Tokyo')->isLocal());
+        $this->assertTrue(DateTime::now('America/Los_Angeles')->isLocal());
+        date_default_timezone_set($og);
+    }
+
+    /**
      * Test checking if a datetime is a weekday
      *
      * @return void
@@ -367,5 +392,21 @@ class Reading extends TestCase
         $this->assertFalse(DateTime::createFromFormat('Y-m-d', '2021-01-06')->isWeekend());
         $this->assertFalse(DateTime::createFromFormat('Y-m-d', '2021-01-07')->isWeekend());
         $this->assertFalse(DateTime::createFromFormat('Y-m-d', '2021-01-08')->isWeekend());
+    }
+
+    /**
+     * Test getMicroseconds
+     *
+     * @return void
+     *
+     * @covers \Kusabi\Date\DateTime::getMicroseconds
+     */
+    public function testMicroseconds()
+    {
+        $datetime = DateTime::createFromFormat('Y-m-d H:i:s', '2022-01-01 00:00:00');
+        $this->assertSame(0, $datetime->getMicroseconds());
+
+        $datetime = DateTime::createFromTimestamp('0.555555 1640995200');
+        $this->assertSame(555555, $datetime->getMicroseconds());
     }
 }
