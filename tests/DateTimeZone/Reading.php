@@ -196,4 +196,23 @@ class Reading extends TestCase
             $this->assertSame($transitionsArray[$key]['time'], $transition->getDate()->format('Y-m-d\TH:i:sO'));
         }
     }
+
+    /**
+     * Test that transitions are returned as an object
+     *
+     * @return void
+     *
+     * @covers \Kusabi\Date\DateTimeZone::getValidTimezones
+     */
+    public function testGetValidTimezones()
+    {
+        $native = timezone_identifiers_list();
+        $ours = DateTimeZone::getValidTimezones();
+        foreach ($native as $value) {
+            $this->assertTrue(isset($ours[$value]));
+            $this->assertTrue(in_array($value, $ours));
+            unset($ours[$value]);
+        }
+        $this->assertEmpty($ours);
+    }
 }

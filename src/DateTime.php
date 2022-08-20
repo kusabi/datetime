@@ -67,7 +67,7 @@ class DateTime extends \DateTime
      */
     public static function createFromInstance(DateTimeInterface $datetime): self
     {
-        return static::now()->copy($datetime);
+        return static::instance()->copy($datetime);
     }
 
     /**
@@ -111,10 +111,7 @@ class DateTime extends \DateTime
      *
      * @param \DateTimeZone|string|null $timezone
      *
-     * @throws Exception
-     *
      * @return static
-     *
      */
     public static function now($timezone = null): self
     {
